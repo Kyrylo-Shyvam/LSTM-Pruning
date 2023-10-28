@@ -14,7 +14,7 @@ mkdir -p ${work_dir}
 echo save results to ${work_dir}
 
 # decoding
-python nmt.py \
+python lstmModel.py\
     decode \
     --cuda \
     --beam-size 5 \

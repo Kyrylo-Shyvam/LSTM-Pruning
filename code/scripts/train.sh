@@ -14,7 +14,7 @@ mkdir -p ${work_dir}
 echo save results to ${work_dir}
 
 # training
-python nmt.py \
+python lstmModel.py \
     train \
     --cuda \
     --vocab ${vocab} \
@@ -35,7 +35,7 @@ python nmt.py \
     --lr-decay 0.5 
 
 # decoding
-python nmt.py \
+python lstmModel.py \
     decode \
     --cuda \
     --beam-size 5 \
