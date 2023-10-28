@@ -333,13 +333,13 @@ class NMT(nn.Module):
                                                       exp_src_encodings, exp_src_encodings_att_linear, src_sent_masks=None)
 
             # log probabilities over target words
-            log_p_t = F.log_softmax(self.readout(att_t), dim=-1)
+            log_p_t = F.log_softmax(self.pred(att_t), dim=-1)
 
             live_hyp_num = beam_size - len(completed_hypotheses)
             contiuating_hyp_scores = (hyp_scores.unsqueeze(1).expand_as(log_p_t) + log_p_t).view(-1)
             top_cand_hyp_scores, top_cand_hyp_pos = torch.topk(contiuating_hyp_scores, k=live_hyp_num)
 
-            prev_hyp_ids = top_cand_hyp_pos / len(self.vocab.tgt)
+            prev_hyp_ids = torch.div(top_cand_hyp_pos , len(self.vocab.tgt),rounding_mode='floor')
             hyp_word_ids = top_cand_hyp_pos % len(self.vocab.tgt)
 
             new_hypotheses = []
