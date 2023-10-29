@@ -19,7 +19,7 @@ python lstmModel.py\
     --cuda \
     --beam-size 5 \
     --max-decoding-time-step 100 \
-    ${work_dir}/model.bin \
+    ${work_dir}/"$1" \
     ${test_src} \
     ${work_dir}/decode.txt
 
