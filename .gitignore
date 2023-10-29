@@ -1,1 +1,2 @@
-code/work_dir/model.bin.optim
+code/work_dir/*.optim
+code/slurm*
