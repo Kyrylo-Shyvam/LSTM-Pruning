@@ -667,7 +667,8 @@ def retrain(args: Dict,model):
             optimizer.zero_grad()
 
             batch_size = len(src_sents)
-
+            src_sents = src_sents.to("cuda:0")
+            tgt_sents = tgt_sents.to("cuda:0")
             # (batch_size)
             example_losses = -model(src_sents, tgt_sents)
             batch_loss = example_losses.sum()
