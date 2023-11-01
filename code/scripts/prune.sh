@@ -10,4 +10,3 @@ python lstmModel.py \
     ${work_dir}/"$1" \
     "$2" \
     "$3" \ 
-    "$4"
