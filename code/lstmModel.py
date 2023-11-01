@@ -667,8 +667,6 @@ def retrain(args: Dict,model):
             optimizer.zero_grad()
 
             batch_size = len(src_sents)
-            src_sents = src_sents.to("cuda:0")
-            tgt_sents = tgt_sents.to("cuda:0")
             # (batch_size)
             example_losses = -model(src_sents, tgt_sents)
             batch_loss = example_losses.sum()
@@ -900,7 +898,7 @@ def pruneFunction(args: Dict[str, str]):
             prune.remove(i,j[:-5])
         model.save(args['MODEL_PATH'] + '.pruned')
     
-def pruneFunctionRetraining(args: Dict[str, str]):
+def pruneFunctionRetraining(args: Dict):
     if args['PRUNING_TYPE'] == 'class-blind':
         model = NMT.load(args['MODEL_PATH'])
         class_blind_pruning(model, float(args['PERCENTAGE']))
