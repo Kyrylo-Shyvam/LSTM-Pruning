@@ -15,7 +15,7 @@ echo save results to ${work_dir}
 
 # training
 python lstmModel.py \
-    train \
+    pruneFunctionRetraining \
     --cuda \
     --vocab ${vocab} \
     --train-src ${train_src} \
@@ -35,4 +35,6 @@ python lstmModel.py \
     --lr-decay 0.5 \
     --max-epoch 10 \
     --lr 0.0005 
-
+    ${work_dir}/"$1" \
+    "$2" \
+    "$3" 

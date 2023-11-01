@@ -8,11 +8,10 @@ A very basic implementation of neural machine translation
 
 Usage:
     nmt.py train --train-src=<file> --train-tgt=<file> --dev-src=<file> --dev-tgt=<file> --vocab=<file> [options]
-    nmt.py retrain --train-src=<file> --train-tgt=<file> --dev-src=<file> --dev-tgt=<file> --vocab=<file> [options]
     nmt.py decode [options] MODEL_PATH TEST_SOURCE_FILE OUTPUT_FILE
     nmt.py decode [options] MODEL_PATH TEST_SOURCE_FILE TEST_TARGET_FILE OUTPUT_FILE
     nmt.py pruneFunction [options] MODEL_PATH PRUNING_TYPE PERCENTAGE
-    nmt.py pruneFunctionRetraining [options] MODEL_PATH PRUNING_TYPE PERCENTAGE
+    nmt.py pruneFunctionRetraining --train-src=<file> --train-tgt=<file> --dev-src=<file> --dev-tgt=<file> --vocab=<file> [options] MODEL_PATH PRUNING_TYPE PERCENTAGE
 
 Options:
     -h --help                               show this screen.
@@ -904,14 +903,17 @@ def pruneFunctionRetraining(args: Dict[str, str]):
     if args['PRUNING_TYPE'] == 'class-blind':
         model = NMT.load(args['MODEL_PATH'])
         class_blind_pruning(model, float(args['PERCENTAGE']))
+        retrain(args)
     
     elif args['PRUNING_TYPE'] == 'class-uniform':
         model = NMT.load(args['MODEL_PATH'])
         class_uniform_pruning(model, float(args['PERCENTAGE']))
+        retrain(args)
     
     elif args['PRUNING_TYPE'] == 'class-distribution':
         model = NMT.load(args['MODEL_PATH'])
         class_distribution_pruning(model, float(args['PERCENTAGE']))
+        retrain(args)
 
 # In[ ]:
 
@@ -932,8 +934,6 @@ def main():
         decode(args)
     elif args['pruneFunction']:
         pruneFunction(args)
-    elif args['retrain']:
-        retrain(args)
     elif args['pruneFunctionRetraining']:
         pruneFunctionRetraining(args)
     else:
