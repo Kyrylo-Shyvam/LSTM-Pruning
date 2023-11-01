@@ -453,7 +453,7 @@ def compute_corpus_level_bleu_score(references: List[List[str]], hypotheses: Lis
 
 def train(args: Dict):
     wandb.login(key="14dded5f079435f64fb5e2f0278662dda5605f9e")
-    wandb.init(project="test-wandb")
+    wandb.init(project="train-wandb")
     wandb.config.lr = args['--lr']
     wandb.config.batch_size = args['--batch-size']
     wandb.config.embed_size = args['--embed-size']
@@ -462,6 +462,8 @@ def train(args: Dict):
     wandb.config.input_feed = args['--input-feed']
     wandb.config.label_smoothing = args['--label-smoothing']
     wandb.config.log_every = args['--log-every']
+    wandb.config.lr_decay = args['--lr-decay']
+    wandb.config.uniform_init = args['--uniform-init']
 
     #appending <s> and </s> to all sentences
     train_data_src = read_corpus(args['--train-src'], source='src')
