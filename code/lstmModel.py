@@ -613,7 +613,7 @@ def train(args: Dict):
                     exit(0)
     
 
-def retrain(args: Dict):
+def retrain(args: Dict,model):
     #appending <s> and </s> to all sentences
     train_data_src = read_corpus(args['--train-src'], source='src')
     train_data_tgt = read_corpus(args['--train-tgt'], source='tgt')
@@ -903,17 +903,17 @@ def pruneFunctionRetraining(args: Dict[str, str]):
     if args['PRUNING_TYPE'] == 'class-blind':
         model = NMT.load(args['MODEL_PATH'])
         class_blind_pruning(model, float(args['PERCENTAGE']))
-        retrain(args)
+        retrain(args,model)
     
     elif args['PRUNING_TYPE'] == 'class-uniform':
         model = NMT.load(args['MODEL_PATH'])
         class_uniform_pruning(model, float(args['PERCENTAGE']))
-        retrain(args)
+        retrain(args,model)
     
     elif args['PRUNING_TYPE'] == 'class-distribution':
         model = NMT.load(args['MODEL_PATH'])
         class_distribution_pruning(model, float(args['PERCENTAGE']))
-        retrain(args)
+        retrain(args,model)
 
 # In[ ]:
 
