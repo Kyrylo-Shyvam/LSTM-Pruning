@@ -8,7 +8,6 @@ A very basic implementation of neural machine translation
 
 Usage:
     nmt.py train --train-src=<file> --train-tgt=<file> --dev-src=<file> --dev-tgt=<file> --vocab=<file> [options] 
-    nmt.py retrain --train-src=<file> --train-tgt=<file> --dev-src=<file> --dev-tgt=<file> --vocab=<file> [options] MODEL_PATH
     nmt.py decode [options] MODEL_PATH TEST_SOURCE_FILE OUTPUT_FILE
     nmt.py decode [options] MODEL_PATH TEST_SOURCE_FILE TEST_TARGET_FILE OUTPUT_FILE
     nmt.py pruneFunction [options] MODEL_PATH PRUNING_TYPE PERCENTAGE 
