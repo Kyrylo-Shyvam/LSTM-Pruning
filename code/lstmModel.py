@@ -663,7 +663,7 @@ def decode(args: Dict[str, str]):
         for src_sent, hyps in zip(test_data_src, hypotheses):
             top_hyp = hyps[0]
             hyp_sent = ' '.join(top_hyp.value)
-            f.write(hyp_sent + '\n')
+            f.write(hyp_sent +'\n')
 
 def get_layers(model):
     arr =[]
