@@ -1,0 +1,12 @@
+#!/bin/sh
+
+work_dir="work_dir"
+
+mkdir -p ${work_dir}
+echo save results to ${work_dir}
+
+python lstmModel.py \
+    prune \
+    ${work_dir}/"$1" \
+    class-blind \
+    0.5 

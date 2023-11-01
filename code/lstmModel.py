@@ -10,6 +10,7 @@ Usage:
     nmt.py train --train-src=<file> --train-tgt=<file> --dev-src=<file> --dev-tgt=<file> --vocab=<file> [options]
     nmt.py decode [options] MODEL_PATH TEST_SOURCE_FILE OUTPUT_FILE
     nmt.py decode [options] MODEL_PATH TEST_SOURCE_FILE TEST_TARGET_FILE OUTPUT_FILE
+    nmt.py prune [options] MODEL_PATH PRUNING_TYPE PERCENTAGE
 
 Options:
     -h --help                               show this screen.
@@ -58,6 +59,7 @@ import torch.nn as nn
 import torch.nn.utils
 import torch.nn.functional as F
 from torch.nn.utils.rnn import pad_packed_sequence, pack_padded_sequence
+import torch.nn.utils.prune as prune
 
 from utils import read_corpus, batch_iter, LabelSmoothingLoss
 from vocab import Vocab, VocabEntry
@@ -406,7 +408,6 @@ class NMT(nn.Module):
 
         torch.save(params, path)
 
-
 # In[ ]:
 
 
@@ -664,6 +665,81 @@ def decode(args: Dict[str, str]):
             hyp_sent = ' '.join(top_hyp.value)
             f.write(hyp_sent + '\n')
 
+def get_layers(model):
+    arr =[]
+    for i,j in model.named_parameters():
+        a = i.split('.')
+        arr.append(tuple(a))
+        
+    layers = []
+    for name, weight in arr:
+        for i,j in model.named_children():
+            if i == name:
+                layers.append([j,weight])
+    return layers
+
+def class_blind_pruning(model,percentage):
+    layers = get_layers(model)
+    prune.global_unstructured(layers,pruning_method=prune.L1Unstructured,amount=percentage)
+
+def class_uniform_sub(module,percentage):
+    layers=[]
+    for weight_name,_ in module.named_parameters():
+        layers.append([module,weight_name])
+    if len(layers) > 0:
+        prune.global_unstructured(layers,pruning_method=prune.L1Unstructured,amount=percentage)
+    
+def class_uniform_pruning(model, percentage):
+    for i,j in model.named_children():
+        class_uniform_sub(j, percentage)
+    
+def class_distribution_sub(module, lamb):
+    layers=[]
+    for weight_name,_ in module.named_parameters():
+        layers.append([module,weight_name])
+    if len(layers) == 0:
+        return 0,0
+    params=[]
+    for param in module.parameters():
+        params.append(param.flatten())
+    params=torch.cat(params)
+    std=params.std()
+    cnt=(lamb*std > abs(params)).float().sum().int().item()
+    prune.global_unstructured(layers,pruning_method=prune.L1Unstructured,amount=cnt)
+    return cnt, params.numel()
+    
+def class_distribution_pruning(model,lamb):
+    total_p,total=0,0
+    for i,j in model.named_children():
+        a,b= class_distribution_sub(j, lamb)
+        total_p += a
+        total += b
+    print(total_p/total)
+
+def prune(args: Dict[str, str]):
+    if args['PRUNING_TYPE'] == 'class-blind':
+        model = NMT.load(args['MODEL_PATH'])
+        class_blind_pruning(model, float(args['PERCENTAGE']))
+        layers = get_layers(model)
+        for i, j in layers:
+            prune.remove(i,j[:-5])
+        model.save(args['MODEL_PATH'] + '.pruned')
+    
+    elif args['PRUNING_TYPE'] == 'class-uniform':
+        model = NMT.load(args['MODEL_PATH'])
+        class_uniform_pruning(model, float(args['PERCENTAGE']))
+        layers = get_layers(model)
+        for i, j in layers:
+            prune.remove(i,j[:-5])
+        model.save(args['MODEL_PATH'] + '.pruned')
+    
+    elif args['PRUNING_TYPE'] == 'class-distribution':
+        model = NMT.load(args['MODEL_PATH'])
+        class_distribution_pruning(model, float(args['PERCENTAGE']))
+        layers = get_layers(model)
+        for i, j in layers:
+            prune.remove(i,j[:-5])
+        model.save(args['MODEL_PATH'] + '.pruned')
 
 # In[ ]:
 
