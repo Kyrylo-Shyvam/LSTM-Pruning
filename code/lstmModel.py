@@ -758,7 +758,7 @@ def main():
         train(args)
     elif args['decode']:
         decode(args)
-    elif args['prune']:
+    elif args['pruneFunction']:
         pruneFunction(args)
     else:
         raise RuntimeError(f'invalid run mode')
