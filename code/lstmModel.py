@@ -641,6 +641,7 @@ def beam_search(model: NMT, test_data_src: List[List[str]], beam_size: int, max_
 def decode(args: Dict[str, str]):
     wandb.login(key="14dded5f079435f64fb5e2f0278662dda5605f9e")
     wandb.init(project="test-wandb")
+    wandb.log({"test": "test"})
     print(f"load test source sentences from [{args['TEST_SOURCE_FILE']}]", file=sys.stderr)
     test_data_src = read_corpus(args['TEST_SOURCE_FILE'], source='src')
     if args['TEST_TARGET_FILE']:
