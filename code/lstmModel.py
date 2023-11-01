@@ -58,6 +58,7 @@ import torch.nn as nn
 import torch.nn.utils
 import torch.nn.functional as F
 from torch.nn.utils.rnn import pad_packed_sequence, pack_padded_sequence
+import wandb
 
 from utils import read_corpus, batch_iter, LabelSmoothingLoss
 from vocab import Vocab, VocabEntry
@@ -77,6 +78,8 @@ class NMT(nn.Module):
         self.dropout_rate = dropout_rate
         self.vocab = vocab 
         self.input_feed = input_feed 
+        wandb.login("14dded5f079435f64fb5e2f0278662dda5605f9e")
+        wandb.init(project="test-wandb")
         #input feed = true is used when we want to inconporate attentional effects we want to have information not only about the last hidden layer but all hidden layers
         '''Mentioned in paper: The model will be aware of previous alignment choices.'''
         # initialize neural network layers
@@ -565,6 +568,7 @@ def train(args: Dict):
                 valid_metric = -dev_ppl
 
                 print('validation: iter %d, dev. ppl %f' % (train_iter, dev_ppl), file=sys.stderr)
+                wandb.log({"dev_ppl": dev_ppl})
                 #we try out many models and take the best one intially ther is no model so first conditon is for that
                 is_better = len(hist_valid_scores) == 0 or valid_metric > max(hist_valid_scores)
                 hist_valid_scores.append(valid_metric)
@@ -656,6 +660,7 @@ def decode(args: Dict[str, str]):
         top_hypotheses = [hyps[0] for hyps in hypotheses]
         #get the bleu_score on test data
         bleu_score = compute_corpus_level_bleu_score(test_data_tgt, top_hypotheses)
+        wandb.log({"bleu_score": bleu_score})
         print(f'Corpus BLEU: {bleu_score}', file=sys.stderr)
 
     with open(args['OUTPUT_FILE'], 'w') as f:
