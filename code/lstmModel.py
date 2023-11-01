@@ -758,6 +758,8 @@ def main():
         train(args)
     elif args['decode']:
         decode(args)
+    elif args['prune']:
+        prune(args)
     else:
         raise RuntimeError(f'invalid run mode')
 
