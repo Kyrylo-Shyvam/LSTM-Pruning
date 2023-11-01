@@ -21,6 +21,7 @@ python lstmModel.py\
     --max-decoding-time-step 100 \
     ${work_dir}/"$1" \
     ${test_src} \
+    ${test_tgt} \
     ${work_dir}/decode.txt
 
 perl multi-bleu.perl ${test_tgt} < ${work_dir}/decode.txt
