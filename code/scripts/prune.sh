@@ -9,4 +9,5 @@ python lstmModel.py \
     pruneFunction \
     ${work_dir}/"$1" \
     "$2" \
-    "$3"  
+    "$3" \ 
+    "$4"
