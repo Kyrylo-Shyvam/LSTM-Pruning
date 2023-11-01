@@ -32,7 +32,8 @@ python lstmModel.py \
     --dropout 0.2 \
     --clip-grad 5.0 \
     --save-to ${work_dir}/model.bin \
-    --lr-decay 0.5 
+    --lr-decay 0.5 \
+    --max-epoch 15 
 
 # decoding
 python lstmModel.py \

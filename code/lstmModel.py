@@ -464,6 +464,7 @@ def train(args: Dict):
     wandb.config.log_every = args['--log-every']
     wandb.config.lr_decay = args['--lr-decay']
     wandb.config.uniform_init = args['--uniform-init']
+    wandb.config.max_epoch = args['--max-epoch']
 
     #appending <s> and </s> to all sentences
     train_data_src = read_corpus(args['--train-src'], source='src')
