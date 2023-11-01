@@ -6,7 +6,7 @@ mkdir -p ${work_dir}
 echo save results to ${work_dir}
 
 python lstmModel.py \
-    pruneFunction \
+    pruneFunctionRetraining \
     ${work_dir}/"$1" \
     "$2" \
     "$3"  

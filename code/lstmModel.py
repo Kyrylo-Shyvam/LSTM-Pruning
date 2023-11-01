@@ -11,6 +11,7 @@ Usage:
     nmt.py decode [options] MODEL_PATH TEST_SOURCE_FILE OUTPUT_FILE
     nmt.py decode [options] MODEL_PATH TEST_SOURCE_FILE TEST_TARGET_FILE OUTPUT_FILE
     nmt.py pruneFunction [options] MODEL_PATH PRUNING_TYPE PERCENTAGE
+    nmt.py pruneFunctionRetraining [options] MODEL_PATH PRUNING_TYPE PERCENTAGE
 
 Options:
     -h --help                               show this screen.
@@ -740,6 +741,19 @@ def pruneFunction(args: Dict[str, str]):
         for i, j in layers:
             prune.remove(i,j[:-5])
         model.save(args['MODEL_PATH'] + '.pruned')
+    
+def pruneFunctionRetraining(args: Dict[str, str]):
+    if args['PRUNING_TYPE'] == 'class-blind':
+        model = NMT.load(args['MODEL_PATH'])
+        class_blind_pruning(model, float(args['PERCENTAGE']))
+    
+    elif args['PRUNING_TYPE'] == 'class-uniform':
+        model = NMT.load(args['MODEL_PATH'])
+        class_uniform_pruning(model, float(args['PERCENTAGE']))
+    
+    elif args['PRUNING_TYPE'] == 'class-distribution':
+        model = NMT.load(args['MODEL_PATH'])
+        class_distribution_pruning(model, float(args['PERCENTAGE']))
 
 # In[ ]:
 
