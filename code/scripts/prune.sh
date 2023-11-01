@@ -6,7 +6,7 @@ mkdir -p ${work_dir}
 echo save results to ${work_dir}
 
 python lstmModel.py \
-    prune \
+    pruneFunction \
     ${work_dir}/"$1" \
     class-blind \
     0.5 
