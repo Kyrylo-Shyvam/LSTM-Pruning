@@ -11,7 +11,7 @@ Usage:
     nmt.py retrain --train-src=<file> --train-tgt=<file> --dev-src=<file> --dev-tgt=<file> --vocab=<file> [options] MODEL_PATH
     nmt.py decode [options] MODEL_PATH TEST_SOURCE_FILE OUTPUT_FILE
     nmt.py decode [options] MODEL_PATH TEST_SOURCE_FILE TEST_TARGET_FILE OUTPUT_FILE
-    nmt.py pruneFunction [options] MODEL_PATH PRUNING_TYPE PERCENTAGE PRUNE_WITH_RETRAINING
+    nmt.py pruneFunction [options] MODEL_PATH PRUNING_TYPE PERCENTAGE 
 
 Options:
     -h --help                               show this screen.
@@ -877,32 +877,32 @@ def class_distribution_pruning(model,lamb):
     print(total_p/total)
 
 def pruneFunction(args: Dict[str, str]):
-    if args['PRUNE_WITH_RETRAINING'] == 0:
-        if args['PRUNING_TYPE'] == 'class-blind':
-            model = NMT.load(args['MODEL_PATH'])
-            class_blind_pruning(model, float(args['PERCENTAGE']))
-            layers = get_layers(model)
-            for i, j in layers:
-                prune.remove(i,j[:-5])
-            model.save(args['MODEL_PATH'] + '.pruned')
+    # if args['PRUNE_WITH_RETRAINING'] == 0:
+    #     if args['PRUNING_TYPE'] == 'class-blind':
+    #         model = NMT.load(args['MODEL_PATH'])
+    #         class_blind_pruning(model, float(args['PERCENTAGE']))
+    #         layers = get_layers(model)
+    #         for i, j in layers:
+    #             prune.remove(i,j[:-5])
+    #         model.save(args['MODEL_PATH'] + '.pruned')
         
-        elif args['PRUNING_TYPE'] == 'class-uniform':
-            model = NMT.load(args['MODEL_PATH'])
-            class_uniform_pruning(model, float(args['PERCENTAGE']))
-            layers = get_layers(model)
-            for i, j in layers:
-                prune.remove(i,j[:-5])
-            model.save(args['MODEL_PATH'] + '.pruned')
+    #     elif args['PRUNING_TYPE'] == 'class-uniform':
+    #         model = NMT.load(args['MODEL_PATH'])
+    #         class_uniform_pruning(model, float(args['PERCENTAGE']))
+    #         layers = get_layers(model)
+    #         for i, j in layers:
+    #             prune.remove(i,j[:-5])
+    #         model.save(args['MODEL_PATH'] + '.pruned')
         
-        elif args['PRUNING_TYPE'] == 'class-distribution':
-            model = NMT.load(args['MODEL_PATH'])
-            class_distribution_pruning(model, float(args['PERCENTAGE']))
-            layers = get_layers(model)
-            for i, j in layers:
-                prune.remove(i,j[:-5])
-            model.save(args['MODEL_PATH'] + '.pruned')
+    #     elif args['PRUNING_TYPE'] == 'class-distribution':
+    #         model = NMT.load(args['MODEL_PATH'])
+    #         class_distribution_pruning(model, float(args['PERCENTAGE']))
+    #         layers = get_layers(model)
+    #         for i, j in layers:
+    #             prune.remove(i,j[:-5])
+    #         model.save(args['MODEL_PATH'] + '.pruned')
     
-    elif args['PRUNE_WITH_RETRAINING'] == 1:
+    # elif args['PRUNE_WITH_RETRAINING'] == 1:
         if args['PRUNING_TYPE'] == 'class-blind':
             model = NMT.load(args['MODEL_PATH'])
             class_blind_pruning(model, float(args['PERCENTAGE']))          
