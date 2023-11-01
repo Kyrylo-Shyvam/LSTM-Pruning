@@ -78,8 +78,6 @@ class NMT(nn.Module):
         self.dropout_rate = dropout_rate
         self.vocab = vocab 
         self.input_feed = input_feed 
-        wandb.login(key="14dded5f079435f64fb5e2f0278662dda5605f9e")
-        wandb.init(project="test-wandb")
         #input feed = true is used when we want to inconporate attentional effects we want to have information not only about the last hidden layer but all hidden layers
         '''Mentioned in paper: The model will be aware of previous alignment choices.'''
         # initialize neural network layers
@@ -454,6 +452,8 @@ def compute_corpus_level_bleu_score(references: List[List[str]], hypotheses: Lis
 
 
 def train(args: Dict):
+    wandb.login(key="14dded5f079435f64fb5e2f0278662dda5605f9e")
+    wandb.init(project="test-wandb")
     #appending <s> and </s> to all sentences
     train_data_src = read_corpus(args['--train-src'], source='src')
     train_data_tgt = read_corpus(args['--train-tgt'], source='tgt')
