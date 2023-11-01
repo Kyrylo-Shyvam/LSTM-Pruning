@@ -658,12 +658,12 @@ def decode(args: Dict[str, str]):
                              beam_size=int(args['--beam-size']),
                              max_decoding_time_step=int(args['--max-decoding-time-step']))
 
-    if args['TEST_TARGET_FILE']:
-        top_hypotheses = [hyps[0] for hyps in hypotheses]
+    # if args['TEST_TARGET_FILE']:
+    top_hypotheses = [hyps[0] for hyps in hypotheses]
         #get the bleu_score on test data
-        bleu_score = compute_corpus_level_bleu_score(test_data_tgt, top_hypotheses)
-        wandb.log({"bleu_score": bleu_score})
-        print(f'Corpus BLEU: {bleu_score}', file=sys.stderr)
+    bleu_score = compute_corpus_level_bleu_score(test_data_tgt, top_hypotheses)
+    wandb.log({"bleu_score": bleu_score})
+    print(f'Corpus BLEU: {bleu_score}', file=sys.stderr)
 
     with open(args['OUTPUT_FILE'], 'w') as f:
         for src_sent, hyps in zip(test_data_src, hypotheses):
