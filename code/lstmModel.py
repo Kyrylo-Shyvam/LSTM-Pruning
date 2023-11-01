@@ -579,7 +579,7 @@ def train(args: Dict):
                 valid_metric = -dev_ppl
 
                 print('validation: iter %d, dev. ppl %f' % (train_iter, dev_ppl), file=sys.stderr)
-                # wandb.log({"dev_ppl": dev_ppl})
+                wandb.log({"dev_ppl": dev_ppl})
                 #we try out many models and take the best one intially ther is no model so first conditon is for that
                 is_better = len(hist_valid_scores) == 0 or valid_metric > max(hist_valid_scores)
                 hist_valid_scores.append(valid_metric)
