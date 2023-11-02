@@ -901,30 +901,36 @@ def class_distribution_pruning(model,lamb):
         total_p += a
         total += b
     print(total_p/total)
+    return total_p/total
+
 
 def pruneModel(model, args: Dict[str, str]):
     '''Prune, given a model'''
     if args['PRUNING_TYPE'] == 'class-blind':
         class_blind_pruning(model, float(args['PERCENTAGE']))
+        return float(args['PERCENTAGE'])
     
     elif args['PRUNING_TYPE'] == 'class-uniform':
         class_uniform_pruning(model, float(args['PERCENTAGE']))
+        return float(args['PERCENTAGE'])
     
     elif args['PRUNING_TYPE'] == 'class-distribution':
-        class_distribution_pruning(model, float(args['PERCENTAGE']))
+        return class_distribution_pruning(model, float(args['PERCENTAGE']))
 
 def pruneModelPermanently(model, args: Dict[str, str]):
     '''Load - Prune - Permanent - Save'''
-    pruneModel(model, args)
+    perct=pruneModel(model, args)
     layers = get_layers(model)
     for i, j in layers:
         prune.remove(i,j[:-5])
+    return perct
 
 def pruneFunction(args: Dict[str, str]):
     '''Getting called from main()/script. Used for comparision.'''
     model = NMT.load(args['MODEL_PATH'])
-    pruneModelPermanently(model, args)    
+    perct=pruneModelPermanently(model, args)    
     model.save(args['MODEL_PATH'] + '.pruned')
+    return perct
     
 def pruneFunctionRetraining(args: Dict):
     '''Getting called from main()/script. Used for comparision.'''
