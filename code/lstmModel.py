@@ -400,7 +400,7 @@ class NMT(nn.Module):
         try:
             model.load_state_dict(params['state_dict'])
         except:
-            pruneModel(model, args):
+            pruneModel(model, args)
             model.load_state_dict(params['state_dict'])
 
         return model
