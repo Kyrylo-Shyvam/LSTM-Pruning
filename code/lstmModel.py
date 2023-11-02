@@ -794,7 +794,7 @@ def retrain(args: Dict,model):
 
                 if epoch == int(args['--max-epoch']):
                     print('reached maximum number of epochs!', file=sys.stderr)
-                    exit(0)
+                    sys.exit(0)
     
 
 
