@@ -822,10 +822,6 @@ def beam_search(model: NMT, test_data_src: List[List[str]], beam_size: int, max_
 
 
 def decode(args: Dict[str, str]):
-    wandb.login(key="14dded5f079435f64fb5e2f0278662dda5605f9e")
-    wandb.init(project="test-wandb")
-    wandb.config.beam_size = args['--beam-size']
-    wandb.config.max_decoding_time_step = args['--max-decoding-time-step']
     print(f"load test source sentences from [{args['TEST_SOURCE_FILE']}]", file=sys.stderr)
     test_data_src = read_corpus(args['TEST_SOURCE_FILE'], source='src')
     if args['TEST_TARGET_FILE']:
@@ -846,7 +842,6 @@ def decode(args: Dict[str, str]):
     top_hypotheses = [hyps[0] for hyps in hypotheses]
         #get the bleu_score on test data
     bleu_score = compute_corpus_level_bleu_score(test_data_tgt, top_hypotheses)
-    wandb.log({"bleu_score": bleu_score})
     print(f'Corpus BLEU: {bleu_score}', file=sys.stderr)
 
     with open(args['OUTPUT_FILE'], 'w') as f:
@@ -854,6 +849,7 @@ def decode(args: Dict[str, str]):
             top_hyp = hyps[0]
             hyp_sent = ' '.join(top_hyp.value)
             f.write(hyp_sent +'\n')
+    return bleu_score
 
 def get_layers(model):
     arr =[]
