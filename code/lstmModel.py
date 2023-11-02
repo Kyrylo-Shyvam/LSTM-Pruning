@@ -47,6 +47,7 @@ import math
 import pickle
 import sys
 import time
+import copy
 from collections import namedtuple
 
 import numpy as np
@@ -736,10 +737,12 @@ def retrain(args: Dict,model):
                 if is_better:
                     patience = 0
                     print('save currently the best model to [%s]' % model_save_path, file=sys.stderr)
-                    layers = get_layers(model)
+                    final_model = copy.deepcopy(model)
+                    layers = get_layers(final_model)
                     for i, j in layers:
                         prune.remove(i,j[:-5])
                     model.save(model_save_path)
+                    final_model.save(model_save_path + '.final')
 
                     # also save the optimizers' state
                     torch.save(optimizer.state_dict(), model_save_path + '.optim')
