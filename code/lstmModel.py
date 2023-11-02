@@ -397,7 +397,11 @@ class NMT(nn.Module):
         params = torch.load(model_path, map_location=lambda storage, loc: storage)
         args = params['args']
         model = NMT(vocab=params['vocab'], **args)
-        model.load_state_dict(params['state_dict'])
+        try:
+            model.load_state_dict(params['state_dict'])
+        except:
+            pruneModel(model, args):
+            model.load_state_dict(params['state_dict'])
 
         return model
 
@@ -879,46 +883,35 @@ def class_distribution_pruning(model,lamb):
         total += b
     print(total_p/total)
 
-def pruneFunction(args: Dict[str, str]):
+def pruneModel(model, args: Dict[str, str]):
+    '''Prune, given a model'''
     if args['PRUNING_TYPE'] == 'class-blind':
-        model = NMT.load(args['MODEL_PATH'])
         class_blind_pruning(model, float(args['PERCENTAGE']))
-        layers = get_layers(model)
-        for i, j in layers:
-            prune.remove(i,j[:-5])
-        model.save(args['MODEL_PATH'] + '.pruned')
     
     elif args['PRUNING_TYPE'] == 'class-uniform':
-        model = NMT.load(args['MODEL_PATH'])
         class_uniform_pruning(model, float(args['PERCENTAGE']))
-        layers = get_layers(model)
-        for i, j in layers:
-            prune.remove(i,j[:-5])
-        model.save(args['MODEL_PATH'] + '.pruned')
     
     elif args['PRUNING_TYPE'] == 'class-distribution':
-        model = NMT.load(args['MODEL_PATH'])
         class_distribution_pruning(model, float(args['PERCENTAGE']))
-        layers = get_layers(model)
-        for i, j in layers:
-            prune.remove(i,j[:-5])
-        model.save(args['MODEL_PATH'] + '.pruned')
+
+def pruneModelPermanently(model, args: Dict[str, str]):
+    '''Load - Prune - Permanent - Save'''
+    pruneModel(model, args)
+    layers = get_layers(model)
+    for i, j in layers:
+        prune.remove(i,j[:-5])
+
+def pruneFunction(args: Dict[str, str]):
+    '''Getting called from main()/script. Used for comparision.'''
+    model = NMT.load(args['MODEL_PATH'])
+    pruneModelPermanently(model, args)    
+    model.save(args['MODEL_PATH'] + '.pruned')
     
 def pruneFunctionRetraining(args: Dict):
-    if args['PRUNING_TYPE'] == 'class-blind':
-        model = NMT.load(args['MODEL_PATH'])
-        class_blind_pruning(model, float(args['PERCENTAGE']))
-        retrain(args,model)
-    
-    elif args['PRUNING_TYPE'] == 'class-uniform':
-        model = NMT.load(args['MODEL_PATH'])
-        class_uniform_pruning(model, float(args['PERCENTAGE']))
-        retrain(args,model)
-    
-    elif args['PRUNING_TYPE'] == 'class-distribution':
-        model = NMT.load(args['MODEL_PATH'])
-        class_distribution_pruning(model, float(args['PERCENTAGE']))
-        retrain(args,model)
+    '''Getting called from main()/script. Used for comparision.'''
+    model = NMT.load(args['MODEL_PATH'])
+    pruneModel(model, args)
+    retrain(args,model)
 
 # In[ ]:
 
