@@ -868,6 +868,11 @@ def random_pruning(model,percentage):
     layers = get_layers(model)
     prune.global_unstructured(layers,pruning_method=prune.RandomUnstructured,amount=percentage)
 
+def random_layerwise_pruning(model,percentage):
+    layers=get_layers(model)
+    for i,j in layers:
+        prune.global_unstructured([[i,j]],pruning_method=prune.RandomUnstructured,amount=percentage)
+
 def class_blind_pruning(model,percentage):
     layers = get_layers(model)
     prune.global_unstructured(layers,pruning_method=prune.L1Unstructured,amount=percentage)
@@ -910,6 +915,9 @@ def class_distribution_pruning(model,lamb):
 
 def pruneModel(model, args: Dict[str, str]):
     '''Prune, given a model'''
+    if args['PRUNING_TYPE'] == 'random_layerwise':
+        random_layerwise_pruning(model, float(args['PERCENTAGE']))
+        return float(args['PERCENTAGE'])
     if args['PRUNING_TYPE'] == 'random':
         random_pruning(model, float(args['PERCENTAGE']))
         return float(args['PERCENTAGE'])
