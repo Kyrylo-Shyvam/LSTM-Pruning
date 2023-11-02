@@ -112,7 +112,11 @@ class NMT(nn.Module):
             
     @property
     def device(self) -> torch.device:
-        return self.src_embed.weight.device   
+        try:
+            a=self.src_embed.weight_orig.device
+        except:
+            a=self.src_embed.weight.device
+        return a
     
     #function for encoding the input returns the hidden states and decoder_init_state
     def encode(self, src_sents_var: torch.Tensor, src_sent_lens: List[int]) -> Tuple[torch.Tensor, Tuple[torch.Tensor, torch.Tensor]]:
@@ -614,6 +618,7 @@ def train(args: Dict):
     
 
 def retrain(args: Dict,model):
+    print('inside2')
     #appending <s> and </s> to all sentences
     train_data_src = read_corpus(args['--train-src'], source='src')
     train_data_tgt = read_corpus(args['--train-tgt'], source='tgt')
@@ -648,6 +653,7 @@ def retrain(args: Dict,model):
     print('use device: %s' % device, file=sys.stderr)
 
     model = model.to(device)
+    print(model.device, model.src_embed.weight_orig.device)
 
     optimizer = torch.optim.Adam(model.parameters(), lr=float(args['--lr']))
 
@@ -926,7 +932,6 @@ def main():
     if args['--cuda']:
         torch.cuda.manual_seed(seed)
     np.random.seed(seed * 13 // 7)
-
     if args['train']:
         train(args)
     elif args['decode']:
@@ -937,6 +942,7 @@ def main():
         pruneFunctionRetraining(args)
     else:
         raise RuntimeError(f'invalid run mode')
+    print('lastr')
 
 
 if __name__ == '__main__':

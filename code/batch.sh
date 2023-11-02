@@ -6,7 +6,7 @@
 #SBATCH --mem-per-cpu=2048
 #SBATCH --time=0-04:00:00
 #SBATCH --mail-type=END
-#SBATCH -w gnode084
+#SBATCH -w gnode067
 
 
 source ~/cpu1/bin/activate
