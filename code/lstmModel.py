@@ -612,7 +612,7 @@ def train(args: Dict):
                         print('hit #%d trial' % num_trial, file=sys.stderr)
                         if num_trial == int(args['--max-num-trial']):
                             print('early stop!', file=sys.stderr)#so if we get worse more than patience no of times we early stop it
-                            exit(0)
+                            sys.exit(0)
 
                         # decay lr, and restore from previously best checkpoint
                         lr = optimizer.param_groups[0]['lr'] * float(args['--lr-decay'])
