@@ -443,11 +443,12 @@ def evaluate_ppl(model, dev_data, batch_size=32):
             cum_tgt_words += tgt_word_num_to_predict
         
         ppl = np.exp(cum_loss / cum_tgt_words)
+        loss = cum_loss / cum_tgt_words
 
     if was_training:
         model.train()
 
-    return ppl
+    return ppl, loss
 
 def compute_corpus_level_bleu_score(references: List[List[str]], hypotheses: List[Hypothesis]) -> float:
     if references[0][0] == '<s>':
@@ -587,11 +588,11 @@ def train(args: Dict):
                 print('begin validation ...', file=sys.stderr)
 
                 # compute dev. ppl and bleu
-                dev_ppl = evaluate_ppl(model, dev_data, batch_size=128)   # dev batch size can be a bit larger
+                dev_ppl,dev_loss = evaluate_ppl(model, dev_data, batch_size=128)   # dev batch size can be a bit larger
                 valid_metric = -dev_ppl
 
                 print('validation: iter %d, dev. ppl %f' % (train_iter, dev_ppl), file=sys.stderr)
-                wandb.log({"dev_ppl": dev_ppl})
+                wandb.log({"dev_ppl": dev_ppl,"dev_loss": dev_loss})
                 #we try out many models and take the best one intially ther is no model so first conditon is for that
                 is_better = len(hist_valid_scores) == 0 or valid_metric > max(hist_valid_scores)
                 hist_valid_scores.append(valid_metric)
@@ -639,7 +640,20 @@ def train(args: Dict):
     
 
 def retrain(args: Dict,model):
-    print('inside2')
+    wandb.login(key="14dded5f079435f64fb5e2f0278662dda5605f9e")
+    wandb.init(project="retrain-wandb")
+    wandb.config.lr = args['--lr']
+    wandb.config.batch_size = args['--batch-size']
+    wandb.config.embed_size = args['--embed-size']
+    wandb.config.hidden_size = args['--hidden-size']
+    wandb.config.dropout = args['--dropout']
+    wandb.config.input_feed = args['--input-feed']
+    wandb.config.label_smoothing = args['--label-smoothing']
+    wandb.config.log_every = args['--log-every']
+    wandb.config.lr_decay = args['--lr-decay']
+    wandb.config.uniform_init = args['--uniform-init']
+    wandb.config.max_epoch = args['--max-epoch']
+    wandb.config.lr = args['--lr']
     #appending <s> and </s> to all sentences
     train_data_src = read_corpus(args['--train-src'], source='src')
     train_data_tgt = read_corpus(args['--train-tgt'], source='tgt')
@@ -735,15 +749,16 @@ def retrain(args: Dict,model):
                                                                                          cum_loss / cum_examples,
                                                                                          np.exp(cum_loss / cum_tgt_words),
                                                                                          cum_examples), file=sys.stderr)
-
+                wandb.log({"train_loss": cum_loss / cum_examples,"train_ppl": np.exp(cum_loss / cum_tgt_words)})
                 cum_loss = cum_examples = cum_tgt_words = 0.
                 valid_num += 1
 
                 print('begin validation ...', file=sys.stderr)
 
                 # compute dev. ppl and bleu
-                dev_ppl = evaluate_ppl(model, dev_data, batch_size=128)   # dev batch size can be a bit larger
+                dev_ppl,dev_loss = evaluate_ppl(model, dev_data, batch_size=128)   # dev batch size can be a bit larger
                 valid_metric = -dev_ppl
+                wandb.log({"dev_ppl": dev_ppl,"dev_loss": dev_loss})
 
                 print('validation: iter %d, dev. ppl %f' % (train_iter, dev_ppl), file=sys.stderr)
                 #we try out many models and take the best one intially ther is no model so first conditon is for that

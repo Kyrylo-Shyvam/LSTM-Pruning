@@ -33,8 +33,8 @@ python lstmModel.py \
     --clip-grad 5.0 \
     --save-to ${work_dir}/model.bin \
     --lr-decay 0.5 \
-    --max-epoch 20 \
-    --lr 0.0005 \
+    --max-epoch 10 \
+    --lr 0.005 \
     ${work_dir}/"$1" \
     "$2" \
     "$3" 
