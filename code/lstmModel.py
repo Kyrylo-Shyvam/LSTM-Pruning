@@ -443,7 +443,7 @@ def evaluate_ppl(model, dev_data, batch_size=32):
             cum_tgt_words += tgt_word_num_to_predict
         
         ppl = np.exp(cum_loss / cum_tgt_words)
-        loss = cum_loss / cum_tgt_words
+        loss = cum_loss / batch_size
 
     if was_training:
         model.train()
