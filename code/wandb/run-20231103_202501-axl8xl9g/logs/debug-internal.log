@@ -1,0 +1,356 @@
+2023-11-03 20:25:01,453 INFO    StreamThr :13425 [internal.py:wandb_internal():89] W&B internal server running at pid: 13425, started at: 2023-11-03 20:25:01.452445
+2023-11-03 20:25:01,456 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status
+2023-11-03 20:25:01,458 INFO    WriterThread:13425 [datastore.py:open_for_write():85] open: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/run-axl8xl9g.wandb
+2023-11-03 20:25:01,465 DEBUG   SenderThread:13425 [sender.py:send():379] send: header
+2023-11-03 20:25:01,496 DEBUG   SenderThread:13425 [sender.py:send():379] send: run
+2023-11-03 20:25:02,250 INFO    SenderThread:13425 [dir_watcher.py:__init__():211] watching files in: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files
+2023-11-03 20:25:02,251 INFO    SenderThread:13425 [sender.py:_start_run_threads():1124] run started: axl8xl9g with start time 1699023301.452289
+2023-11-03 20:25:02,277 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: check_version
+2023-11-03 20:25:02,278 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: check_version
+2023-11-03 20:25:02,509 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: run_start
+2023-11-03 20:25:03,421 DEBUG   HandlerThread:13425 [system_info.py:__init__():32] System info init
+2023-11-03 20:25:03,421 DEBUG   HandlerThread:13425 [system_info.py:__init__():47] System info init done
+2023-11-03 20:25:03,421 INFO    HandlerThread:13425 [system_monitor.py:start():181] Starting system monitor
+2023-11-03 20:25:03,421 INFO    SystemMonitor:13425 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-11-03 20:25:03,423 INFO    HandlerThread:13425 [system_monitor.py:probe():201] Collecting system info
+2023-11-03 20:25:03,423 INFO    SystemMonitor:13425 [interfaces.py:start():190] Started cpu monitoring
+2023-11-03 20:25:03,425 INFO    SystemMonitor:13425 [interfaces.py:start():190] Started disk monitoring
+2023-11-03 20:25:03,426 INFO    SystemMonitor:13425 [interfaces.py:start():190] Started gpu monitoring
+2023-11-03 20:25:03,428 INFO    SystemMonitor:13425 [interfaces.py:start():190] Started memory monitoring
+2023-11-03 20:25:03,429 INFO    SystemMonitor:13425 [interfaces.py:start():190] Started network monitoring
+2023-11-03 20:25:03,483 DEBUG   HandlerThread:13425 [system_info.py:probe():196] Probing system
+2023-11-03 20:25:03,484 DEBUG   HandlerThread:13425 [system_info.py:_probe_git():181] Probing git
+2023-11-03 20:25:03,504 DEBUG   HandlerThread:13425 [system_info.py:_probe_git():189] Probing git done
+2023-11-03 20:25:03,504 DEBUG   HandlerThread:13425 [system_info.py:probe():244] Probing system done
+2023-11-03 20:25:03,504 DEBUG   HandlerThread:13425 [system_monitor.py:probe():210] {'os': 'Linux-4.15.0-210-generic-x86_64-with-Ubuntu-18.04-bionic', 'python': '3.6.9', 'heartbeatAt': '2023-11-03T14:55:03.483587', 'startedAt': '2023-11-03T14:55:01.437994', 'docker': None, 'cuda': None, 'args': ('decode', '--cuda', '--beam-size', '5', '--max-decoding-time-step', '100', 'work_dir/model.bin', 'data/test.de-en.de', 'data/test.de-en.en', 'work_dir/decode.txt'), 'state': 'running', 'program': 'lstmModel.py', 'codePathLocal': 'lstmModel.py', 'codePath': 'code/lstmModel.py', 'git': {'remote': 'https://github.com/Kyrylo-Shyvam/LSTM-Pruning.git', 'commit': '76adc59523265fea2f349f741f5fae299ef4561a'}, 'email': 'kirilkumar@tutanota.com', 'root': '/home2/kyrylo/Play/SMAI-Project/LSTM-Pruning', 'host': 'gnode084', 'username': 'kyrylo', 'executable': '/home2/kyrylo/cpu1/bin/python', 'cpu_count': 20, 'cpu_count_logical': 40, 'cpu_freq': {'current': 1380.2627499999996, 'min': 1200.0, 'max': 3400.0}, 'cpu_freq_per_core': [{'current': 1599.999, 'min': 1200.0, 'max': 3400.0}, {'current': 2954.061, 'min': 1200.0, 'max': 3400.0}, {'current': 1599.189, 'min': 1200.0, 'max': 3400.0}, {'current': 1203.218, 'min': 1200.0, 'max': 3400.0}, {'current': 1203.055, 'min': 1200.0, 'max': 3400.0}, {'current': 1202.969, 'min': 1200.0, 'max': 3400.0}, {'current': 1203.297, 'min': 1200.0, 'max': 3400.0}, {'current': 1203.043, 'min': 1200.0, 'max': 3400.0}, {'current': 1203.103, 'min': 1200.0, 'max': 3400.0}, {'current': 1203.281, 'min': 1200.0, 'max': 3400.0}, {'current': 1203.177, 'min': 1200.0, 'max': 3400.0}, {'current': 1202.989, 'min': 1200.0, 'max': 3400.0}, {'current': 1203.114, 'min': 1200.0, 'max': 3400.0}, {'current': 1203.187, 'min': 1200.0, 'max': 3400.0}, {'current': 1202.405, 'min': 1200.0, 'max': 3400.0}, {'current': 1203.527, 'min': 1200.0, 'max': 3400.0}, {'current': 1203.278, 'min': 1200.0, 'max': 3400.0}, {'current': 1203.097, 'min': 1200.0, 'max': 3400.0}, {'current': 1202.574, 'min': 1200.0, 'max': 3400.0}, {'current': 1202.968, 'min': 1200.0, 'max': 3400.0}, {'current': 1600.205, 'min': 1200.0, 'max': 3400.0}, {'current': 2996.818, 'min': 1200.0, 'max': 3400.0}, {'current': 1600.552, 'min': 1200.0, 'max': 3400.0}, {'current': 1201.117, 'min': 1200.0, 'max': 3400.0}, {'current': 1200.857, 'min': 1200.0, 'max': 3400.0}, {'current': 1201.126, 'min': 1200.0, 'max': 3400.0}, {'current': 1201.387, 'min': 1200.0, 'max': 3400.0}, {'current': 1200.99, 'min': 1200.0, 'max': 3400.0}, {'current': 1201.176, 'min': 1200.0, 'max': 3400.0}, {'current': 1200.525, 'min': 1200.0, 'max': 3400.0}, {'current': 1200.752, 'min': 1200.0, 'max': 3400.0}, {'current': 1200.953, 'min': 1200.0, 'max': 3400.0}, {'current': 1201.286, 'min': 1200.0, 'max': 3400.0}, {'current': 1200.697, 'min': 1200.0, 'max': 3400.0}, {'current': 1201.274, 'min': 1200.0, 'max': 3400.0}, {'current': 1200.958, 'min': 1200.0, 'max': 3400.0}, {'current': 1201.148, 'min': 1200.0, 'max': 3400.0}, {'current': 1200.885, 'min': 1200.0, 'max': 3400.0}, {'current': 1201.289, 'min': 1200.0, 'max': 3400.0}, {'current': 1201.158, 'min': 1200.0, 'max': 3400.0}], 'disk': {'/': {'total': 219.00129318237305, 'used': 94.33653259277344}}, 'gpu': 'NVIDIA GeForce RTX 2080 Ti', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 2080 Ti', 'memory_total': 11811160064}], 'memory': {'total': 125.78252792358398}}
+2023-11-03 20:25:03,505 INFO    HandlerThread:13425 [system_monitor.py:probe():211] Finished collecting system info
+2023-11-03 20:25:03,505 INFO    HandlerThread:13425 [system_monitor.py:probe():214] Publishing system info
+2023-11-03 20:25:03,505 DEBUG   HandlerThread:13425 [system_info.py:_save_pip():53] Saving list of pip packages installed into the current environment
+2023-11-03 20:25:03,507 DEBUG   HandlerThread:13425 [system_info.py:_save_pip():68] Saving pip packages done
+2023-11-03 20:25:03,510 INFO    HandlerThread:13425 [system_monitor.py:probe():216] Finished publishing system info
+2023-11-03 20:25:03,516 DEBUG   SenderThread:13425 [sender.py:send():379] send: files
+2023-11-03 20:25:03,517 INFO    SenderThread:13425 [sender.py:_save_file():1375] saving file wandb-metadata.json with policy now
+2023-11-03 20:25:03,532 DEBUG   SenderThread:13425 [sender.py:send():379] send: telemetry
+2023-11-03 20:25:03,576 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: stop_status
+2023-11-03 20:25:03,576 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: internal_messages
+2023-11-03 20:25:03,579 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: stop_status
+2023-11-03 20:25:03,969 DEBUG   SenderThread:13425 [sender.py:send():379] send: telemetry
+2023-11-03 20:25:03,969 DEBUG   SenderThread:13425 [sender.py:send():379] send: config
+2023-11-03 20:25:03,969 DEBUG   SenderThread:13425 [sender.py:send():379] send: config
+2023-11-03 20:25:04,255 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_created():271] file/dir created: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:25:04,256 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_created():271] file/dir created: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/wandb-metadata.json
+2023-11-03 20:25:04,256 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_created():271] file/dir created: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/requirements.txt
+2023-11-03 20:25:04,562 INFO    wandb-upload_0:13425 [upload_job.py:push():131] Uploaded file /tmp/tmpao7m7q7jwandb/p5wiut3k-wandb-metadata.json
+2023-11-03 20:25:06,255 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:25:06,945 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:25:09,258 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:25:11,260 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:25:11,982 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:25:13,262 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:25:15,264 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:25:17,048 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:25:17,265 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:25:18,527 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: stop_status
+2023-11-03 20:25:18,528 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: stop_status
+2023-11-03 20:25:18,530 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: internal_messages
+2023-11-03 20:25:19,267 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:25:21,269 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:25:22,149 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:25:23,271 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:25:25,273 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:25:27,167 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:25:27,275 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:25:29,277 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:25:31,279 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:25:32,221 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:25:33,281 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:25:33,281 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/config.yaml
+2023-11-03 20:25:33,528 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: stop_status
+2023-11-03 20:25:33,528 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: stop_status
+2023-11-03 20:25:33,533 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: internal_messages
+2023-11-03 20:25:35,282 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:25:37,284 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:25:37,704 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:25:39,286 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:25:41,288 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:25:42,756 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:25:43,289 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:25:45,291 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:25:47,293 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:25:47,805 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:25:48,528 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: stop_status
+2023-11-03 20:25:48,529 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: stop_status
+2023-11-03 20:25:48,535 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: internal_messages
+2023-11-03 20:25:49,295 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:25:51,297 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:25:52,848 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:25:53,299 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:25:55,301 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:25:57,302 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:25:57,946 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:25:59,304 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:01,306 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:02,973 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:26:03,308 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:03,429 DEBUG   SystemMonitor:13425 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-11-03 20:26:03,432 DEBUG   SenderThread:13425 [sender.py:send():379] send: stats
+2023-11-03 20:26:03,529 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: stop_status
+2023-11-03 20:26:03,530 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: internal_messages
+2023-11-03 20:26:03,531 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: stop_status
+2023-11-03 20:26:05,310 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:07,311 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:08,050 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:26:09,312 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:11,314 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:13,079 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:26:13,316 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:15,318 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:17,320 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:18,169 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:26:18,527 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: stop_status
+2023-11-03 20:26:18,528 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: stop_status
+2023-11-03 20:26:18,532 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: internal_messages
+2023-11-03 20:26:19,322 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:21,323 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:23,241 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:26:23,326 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:25,328 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:27,329 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:28,298 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:26:29,331 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:31,333 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:33,335 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:33,346 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:26:33,483 DEBUG   SenderThread:13425 [sender.py:send():379] send: stats
+2023-11-03 20:26:33,529 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: stop_status
+2023-11-03 20:26:33,530 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: stop_status
+2023-11-03 20:26:33,534 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: internal_messages
+2023-11-03 20:26:35,337 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:37,339 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:38,440 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:26:39,341 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:41,343 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:43,346 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:43,622 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:26:45,347 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:47,349 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:48,528 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: stop_status
+2023-11-03 20:26:48,529 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: stop_status
+2023-11-03 20:26:48,532 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: internal_messages
+2023-11-03 20:26:48,912 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:26:49,351 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:51,353 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:53,356 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:53,996 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:26:55,358 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:57,359 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:26:59,049 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:26:59,361 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:01,363 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:03,365 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:03,437 DEBUG   SenderThread:13425 [sender.py:send():379] send: stats
+2023-11-03 20:27:03,529 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: stop_status
+2023-11-03 20:27:03,529 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: stop_status
+2023-11-03 20:27:03,532 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: internal_messages
+2023-11-03 20:27:04,123 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:27:05,367 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:07,369 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:09,181 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:27:09,371 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:11,372 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:13,374 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:14,231 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:27:15,375 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:17,377 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:18,529 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: stop_status
+2023-11-03 20:27:18,529 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: stop_status
+2023-11-03 20:27:18,536 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: internal_messages
+2023-11-03 20:27:19,352 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:27:19,379 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:21,381 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:23,383 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:24,393 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:27:25,385 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:27,387 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:29,389 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:29,444 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:27:31,391 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:33,392 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:33,440 DEBUG   SenderThread:13425 [sender.py:send():379] send: stats
+2023-11-03 20:27:33,529 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: stop_status
+2023-11-03 20:27:33,529 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: stop_status
+2023-11-03 20:27:33,533 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: internal_messages
+2023-11-03 20:27:34,543 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:27:35,394 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:37,396 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:39,398 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:39,560 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:27:41,400 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:43,402 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:44,656 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:27:45,403 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:47,405 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:48,529 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: stop_status
+2023-11-03 20:27:48,529 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: stop_status
+2023-11-03 20:27:48,534 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: internal_messages
+2023-11-03 20:27:49,409 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:49,762 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:27:51,411 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:53,414 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:54,823 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:27:55,416 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:57,418 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:59,420 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:27:59,839 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:28:01,422 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:28:03,423 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:28:03,441 DEBUG   SenderThread:13425 [sender.py:send():379] send: stats
+2023-11-03 20:28:03,554 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: internal_messages
+2023-11-03 20:28:03,565 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: stop_status
+2023-11-03 20:28:03,566 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: stop_status
+2023-11-03 20:28:04,185 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: partial_history
+2023-11-03 20:28:04,187 DEBUG   SenderThread:13425 [sender.py:send():379] send: history
+2023-11-03 20:28:04,187 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: summary_record
+2023-11-03 20:28:04,189 INFO    SenderThread:13425 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-11-03 20:28:04,272 DEBUG   SenderThread:13425 [sender.py:send():379] send: exit
+2023-11-03 20:28:04,272 INFO    SenderThread:13425 [sender.py:send_exit():584] handling exit code: 0
+2023-11-03 20:28:04,275 INFO    SenderThread:13425 [sender.py:send_exit():586] handling runtime: 181
+2023-11-03 20:28:04,276 INFO    SenderThread:13425 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-11-03 20:28:04,277 INFO    SenderThread:13425 [sender.py:send_exit():592] send defer
+2023-11-03 20:28:04,277 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: defer
+2023-11-03 20:28:04,277 INFO    HandlerThread:13425 [handler.py:handle_request_defer():170] handle defer: 0
+2023-11-03 20:28:04,278 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: defer
+2023-11-03 20:28:04,278 INFO    SenderThread:13425 [sender.py:send_request_defer():608] handle sender defer: 0
+2023-11-03 20:28:04,278 INFO    SenderThread:13425 [sender.py:transition_state():612] send defer: 1
+2023-11-03 20:28:04,278 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: defer
+2023-11-03 20:28:04,278 INFO    HandlerThread:13425 [handler.py:handle_request_defer():170] handle defer: 1
+2023-11-03 20:28:04,279 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: defer
+2023-11-03 20:28:04,279 INFO    SenderThread:13425 [sender.py:send_request_defer():608] handle sender defer: 1
+2023-11-03 20:28:04,279 INFO    SenderThread:13425 [sender.py:transition_state():612] send defer: 2
+2023-11-03 20:28:04,279 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: defer
+2023-11-03 20:28:04,279 INFO    HandlerThread:13425 [handler.py:handle_request_defer():170] handle defer: 2
+2023-11-03 20:28:04,279 INFO    HandlerThread:13425 [system_monitor.py:finish():190] Stopping system monitor
+2023-11-03 20:28:04,280 DEBUG   SystemMonitor:13425 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-11-03 20:28:04,280 DEBUG   SystemMonitor:13425 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-11-03 20:28:04,282 INFO    HandlerThread:13425 [interfaces.py:finish():202] Joined cpu monitor
+2023-11-03 20:28:04,283 INFO    HandlerThread:13425 [interfaces.py:finish():202] Joined disk monitor
+2023-11-03 20:28:04,348 INFO    HandlerThread:13425 [interfaces.py:finish():202] Joined gpu monitor
+2023-11-03 20:28:04,349 INFO    HandlerThread:13425 [interfaces.py:finish():202] Joined memory monitor
+2023-11-03 20:28:04,350 INFO    HandlerThread:13425 [interfaces.py:finish():202] Joined network monitor
+2023-11-03 20:28:04,351 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: defer
+2023-11-03 20:28:04,351 INFO    SenderThread:13425 [sender.py:send_request_defer():608] handle sender defer: 2
+2023-11-03 20:28:04,351 INFO    SenderThread:13425 [sender.py:transition_state():612] send defer: 3
+2023-11-03 20:28:04,351 DEBUG   SenderThread:13425 [sender.py:send():379] send: stats
+2023-11-03 20:28:04,351 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: defer
+2023-11-03 20:28:04,352 INFO    HandlerThread:13425 [handler.py:handle_request_defer():170] handle defer: 3
+2023-11-03 20:28:04,352 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: defer
+2023-11-03 20:28:04,352 INFO    SenderThread:13425 [sender.py:send_request_defer():608] handle sender defer: 3
+2023-11-03 20:28:04,352 INFO    SenderThread:13425 [sender.py:transition_state():612] send defer: 4
+2023-11-03 20:28:04,352 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: defer
+2023-11-03 20:28:04,353 INFO    HandlerThread:13425 [handler.py:handle_request_defer():170] handle defer: 4
+2023-11-03 20:28:04,353 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: defer
+2023-11-03 20:28:04,353 INFO    SenderThread:13425 [sender.py:send_request_defer():608] handle sender defer: 4
+2023-11-03 20:28:04,353 INFO    SenderThread:13425 [sender.py:transition_state():612] send defer: 5
+2023-11-03 20:28:04,354 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: defer
+2023-11-03 20:28:04,354 INFO    HandlerThread:13425 [handler.py:handle_request_defer():170] handle defer: 5
+2023-11-03 20:28:04,355 DEBUG   SenderThread:13425 [sender.py:send():379] send: summary
+2023-11-03 20:28:04,355 INFO    SenderThread:13425 [sender.py:_save_file():1375] saving file wandb-summary.json with policy end
+2023-11-03 20:28:04,356 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: defer
+2023-11-03 20:28:04,356 INFO    SenderThread:13425 [sender.py:send_request_defer():608] handle sender defer: 5
+2023-11-03 20:28:04,356 INFO    SenderThread:13425 [sender.py:transition_state():612] send defer: 6
+2023-11-03 20:28:04,356 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: defer
+2023-11-03 20:28:04,357 INFO    HandlerThread:13425 [handler.py:handle_request_defer():170] handle defer: 6
+2023-11-03 20:28:04,357 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: defer
+2023-11-03 20:28:04,357 INFO    SenderThread:13425 [sender.py:send_request_defer():608] handle sender defer: 6
+2023-11-03 20:28:04,357 INFO    SenderThread:13425 [sender.py:transition_state():612] send defer: 7
+2023-11-03 20:28:04,357 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:28:04,358 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: defer
+2023-11-03 20:28:04,358 INFO    HandlerThread:13425 [handler.py:handle_request_defer():170] handle defer: 7
+2023-11-03 20:28:04,358 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: defer
+2023-11-03 20:28:04,359 INFO    SenderThread:13425 [sender.py:send_request_defer():608] handle sender defer: 7
+2023-11-03 20:28:04,425 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_created():271] file/dir created: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/wandb-summary.json
+2023-11-03 20:28:05,272 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: poll_exit
+2023-11-03 20:28:05,426 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:28:06,427 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:28:07,335 INFO    SenderThread:13425 [sender.py:transition_state():612] send defer: 8
+2023-11-03 20:28:07,335 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: poll_exit
+2023-11-03 20:28:07,336 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: defer
+2023-11-03 20:28:07,336 INFO    HandlerThread:13425 [handler.py:handle_request_defer():170] handle defer: 8
+2023-11-03 20:28:07,337 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: defer
+2023-11-03 20:28:07,337 INFO    SenderThread:13425 [sender.py:send_request_defer():608] handle sender defer: 8
+2023-11-03 20:28:07,338 INFO    SenderThread:13425 [job_builder.py:build():281] Attempting to build job artifact
+2023-11-03 20:28:07,339 INFO    SenderThread:13425 [job_builder.py:_get_source_type():393] is repo sourced job
+2023-11-03 20:28:07,346 INFO    SenderThread:13425 [job_builder.py:build():369] adding wandb-job metadata file
+2023-11-03 20:28:07,428 INFO    Thread-12 :13425 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:28:07,512 INFO    SenderThread:13425 [sender.py:transition_state():612] send defer: 9
+2023-11-03 20:28:07,513 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: defer
+2023-11-03 20:28:07,514 DEBUG   SenderThread:13425 [sender.py:send():379] send: artifact
+2023-11-03 20:28:07,514 INFO    HandlerThread:13425 [handler.py:handle_request_defer():170] handle defer: 9
+2023-11-03 20:28:10,126 INFO    wandb-upload_0:13425 [upload_job.py:push():89] Uploaded file /home2/kyrylo/.local/share/wandb/artifacts/staging/tmpgerl1r4s
+2023-11-03 20:28:10,131 INFO    wandb-upload_1:13425 [upload_job.py:push():89] Uploaded file /home2/kyrylo/.local/share/wandb/artifacts/staging/tmprbzzahak
+2023-11-03 20:28:10,275 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: keepalive
+2023-11-03 20:28:13,133 INFO    SenderThread:13425 [sender.py:send_artifact():1453] sent artifact job-https___github.com_Kyrylo-Shyvam_LSTM-Pruning.git_code_lstmModel.py - {'id': 'QXJ0aWZhY3Q6NjI3MDcxMDU0', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjExMTgwOTIwMw==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NjI0OTQzODc1', 'versionIndex': 9}}}
+2023-11-03 20:28:13,134 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: defer
+2023-11-03 20:28:13,134 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: status_report
+2023-11-03 20:28:13,134 INFO    SenderThread:13425 [sender.py:send_request_defer():608] handle sender defer: 9
+2023-11-03 20:28:13,135 INFO    SenderThread:13425 [dir_watcher.py:finish():358] shutting down directory watcher
+2023-11-03 20:28:13,431 INFO    SenderThread:13425 [dir_watcher.py:finish():388] scan: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files
+2023-11-03 20:28:13,432 INFO    SenderThread:13425 [dir_watcher.py:finish():402] scan save: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/requirements.txt requirements.txt
+2023-11-03 20:28:13,432 INFO    SenderThread:13425 [dir_watcher.py:finish():402] scan save: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/wandb-summary.json wandb-summary.json
+2023-11-03 20:28:13,439 INFO    SenderThread:13425 [dir_watcher.py:finish():402] scan save: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/config.yaml config.yaml
+2023-11-03 20:28:13,440 INFO    SenderThread:13425 [dir_watcher.py:finish():402] scan save: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log output.log
+2023-11-03 20:28:13,447 INFO    SenderThread:13425 [dir_watcher.py:finish():402] scan save: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/wandb-metadata.json wandb-metadata.json
+2023-11-03 20:28:13,447 INFO    SenderThread:13425 [sender.py:transition_state():612] send defer: 10
+2023-11-03 20:28:13,448 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: defer
+2023-11-03 20:28:13,448 INFO    HandlerThread:13425 [handler.py:handle_request_defer():170] handle defer: 10
+2023-11-03 20:28:13,455 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: defer
+2023-11-03 20:28:13,455 INFO    SenderThread:13425 [sender.py:send_request_defer():608] handle sender defer: 10
+2023-11-03 20:28:13,455 INFO    SenderThread:13425 [file_pusher.py:finish():175] shutting down file pusher
+2023-11-03 20:28:14,118 INFO    wandb-upload_0:13425 [upload_job.py:push():131] Uploaded file /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/wandb-summary.json
+2023-11-03 20:28:14,273 INFO    wandb-upload_3:13425 [upload_job.py:push():131] Uploaded file /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/requirements.txt
+2023-11-03 20:28:14,373 INFO    wandb-upload_6:13425 [upload_job.py:push():131] Uploaded file /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/output.log
+2023-11-03 20:28:15,277 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: keepalive
+2023-11-03 20:28:15,351 INFO    wandb-upload_1:13425 [upload_job.py:push():131] Uploaded file /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/files/config.yaml
+2023-11-03 20:28:15,551 INFO    Thread-11 :13425 [sender.py:transition_state():612] send defer: 11
+2023-11-03 20:28:15,552 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: defer
+2023-11-03 20:28:15,552 INFO    HandlerThread:13425 [handler.py:handle_request_defer():170] handle defer: 11
+2023-11-03 20:28:15,553 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: defer
+2023-11-03 20:28:15,554 INFO    SenderThread:13425 [sender.py:send_request_defer():608] handle sender defer: 11
+2023-11-03 20:28:15,554 INFO    SenderThread:13425 [file_pusher.py:join():181] waiting for file pusher
+2023-11-03 20:28:15,554 INFO    SenderThread:13425 [sender.py:transition_state():612] send defer: 12
+2023-11-03 20:28:15,554 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: defer
+2023-11-03 20:28:15,554 INFO    HandlerThread:13425 [handler.py:handle_request_defer():170] handle defer: 12
+2023-11-03 20:28:15,555 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: defer
+2023-11-03 20:28:15,555 INFO    SenderThread:13425 [sender.py:send_request_defer():608] handle sender defer: 12
+2023-11-03 20:28:15,555 INFO    SenderThread:13425 [file_stream.py:finish():594] file stream finish called
+2023-11-03 20:28:15,881 INFO    SenderThread:13425 [file_stream.py:finish():598] file stream finish is done
+2023-11-03 20:28:15,881 INFO    SenderThread:13425 [sender.py:transition_state():612] send defer: 13
+2023-11-03 20:28:15,882 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: defer
+2023-11-03 20:28:15,882 INFO    HandlerThread:13425 [handler.py:handle_request_defer():170] handle defer: 13
+2023-11-03 20:28:15,883 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: defer
+2023-11-03 20:28:15,883 INFO    SenderThread:13425 [sender.py:send_request_defer():608] handle sender defer: 13
+2023-11-03 20:28:15,883 INFO    SenderThread:13425 [sender.py:transition_state():612] send defer: 14
+2023-11-03 20:28:15,884 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: defer
+2023-11-03 20:28:15,884 INFO    HandlerThread:13425 [handler.py:handle_request_defer():170] handle defer: 14
+2023-11-03 20:28:15,885 DEBUG   SenderThread:13425 [sender.py:send():379] send: final
+2023-11-03 20:28:15,885 DEBUG   SenderThread:13425 [sender.py:send():379] send: footer
+2023-11-03 20:28:15,885 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: defer
+2023-11-03 20:28:15,886 INFO    SenderThread:13425 [sender.py:send_request_defer():608] handle sender defer: 14
+2023-11-03 20:28:15,887 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: poll_exit
+2023-11-03 20:28:15,888 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: poll_exit
+2023-11-03 20:28:15,889 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: server_info
+2023-11-03 20:28:15,889 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: server_info
+2023-11-03 20:28:15,895 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: get_summary
+2023-11-03 20:28:15,897 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: sampled_history
+2023-11-03 20:28:15,898 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: internal_messages
+2023-11-03 20:28:15,898 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: job_info
+2023-11-03 20:28:16,195 DEBUG   SenderThread:13425 [sender.py:send_request():406] send_request: job_info
+2023-11-03 20:28:16,196 INFO    MainThread:13425 [wandb_run.py:_footer_history_summary_info():3557] rendering history
+2023-11-03 20:28:16,196 INFO    MainThread:13425 [wandb_run.py:_footer_history_summary_info():3589] rendering summary
+2023-11-03 20:28:16,197 INFO    MainThread:13425 [wandb_run.py:_footer_sync_info():3516] logging synced files
+2023-11-03 20:28:16,198 DEBUG   HandlerThread:13425 [handler.py:handle_request():144] handle_request: shutdown
+2023-11-03 20:28:16,198 INFO    HandlerThread:13425 [handler.py:finish():840] shutting down handler
+2023-11-03 20:28:16,899 INFO    WriterThread:13425 [datastore.py:close():294] close: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231103_202501-axl8xl9g/run-axl8xl9g.wandb
+2023-11-03 20:28:17,195 INFO    SenderThread:13425 [sender.py:finish():1531] shutting down sender
+2023-11-03 20:28:17,196 INFO    SenderThread:13425 [file_pusher.py:finish():175] shutting down file pusher
+2023-11-03 20:28:17,196 INFO    SenderThread:13425 [file_pusher.py:join():181] waiting for file pusher

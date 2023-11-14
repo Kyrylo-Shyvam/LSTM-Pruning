@@ -37,4 +37,4 @@ python lstmModel.py \
     --lr 0.001 \
     ${work_dir}/"$1" \
     "$2" \
-    "$3" 
+    "$3"
