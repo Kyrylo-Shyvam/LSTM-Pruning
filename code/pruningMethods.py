@@ -21,7 +21,7 @@ import torch.nn.utils.prune as prune
 
 from utils import read_corpus, batch_iter, LabelSmoothingLoss
 from vocab import Vocab, VocabEntry
-
+from lstmModel import get_layers
 
 class SNIP():
     def __init__(self):

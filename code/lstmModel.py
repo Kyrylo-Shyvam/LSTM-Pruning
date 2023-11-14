@@ -877,7 +877,7 @@ def snipTrain(args: Dict):
     # Start SNIP-ing
     pruningClass = SNIP()
     pruningClass.prune(model=model, data=train_data, batches=1000, batch_size=128, \
-               device=device, percent=args['PERCENTAGE')
+               device=device, percent=args['PERCENTAGE'])
 
     optimizer = torch.optim.Adam(model.parameters(), lr=float(args['--lr']))
 
