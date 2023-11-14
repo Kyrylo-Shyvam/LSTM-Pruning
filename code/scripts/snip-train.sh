@@ -15,7 +15,7 @@ echo save results to ${work_dir}
 
 # training
 python lstmModel.py \
-     \
+     snipTraining\
     --cuda \
     --vocab ${vocab} \
     --train-src ${train_src} \
