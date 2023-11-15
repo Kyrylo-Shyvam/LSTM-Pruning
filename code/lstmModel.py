@@ -864,6 +864,14 @@ def snipTrain(args: Dict):
         print('uniformly initialize parameters [-%f, +%f]' % (uniform_init, uniform_init), file=sys.stderr)
         for p in model.parameters():
             p.data.uniform_(-uniform_init, uniform_init)
+    elif np.abs(uniform_init) < 0.:
+        print('He initializes parameters' file=sys.stderr)
+        for p in model.parameters():
+            p.data.kaiming_uniform_()
+    else:
+        print('No initialized parameters.' file=sys.stderr)
+
+
 
     vocab_mask = torch.ones(len(vocab.tgt))
     vocab_mask[vocab.tgt['<pad>']] = 0
@@ -877,7 +885,7 @@ def snipTrain(args: Dict):
 
     # Start SNIP-ing
     pruningClass = SNIP()
-    pruningClass.prune(model=model, data=train_data, batches=2000, batch_size=64, \
+    pruningClass.prune(model=model, data=train_data, batches=Z000, batch_size=64, \
                device=device, percent=args['PERCENTAGE'])
 
     optimizer = torch.optim.Adam(model.parameters(), lr=float(args['--lr']))

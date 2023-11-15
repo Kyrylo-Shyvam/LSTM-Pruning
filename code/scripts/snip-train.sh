@@ -27,7 +27,7 @@ python lstmModel.py \
     --batch-size 64 \
     --hidden-size 256 \
     --embed-size 256 \
-    --uniform-init 0.0 \
+    --uniform-init -0.1 \
     --label-smoothing 0.1 \
     --dropout 0.2 \
     --clip-grad 5.0 \
