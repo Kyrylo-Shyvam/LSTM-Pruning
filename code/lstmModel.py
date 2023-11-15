@@ -885,7 +885,7 @@ def snipTrain(args: Dict):
 
     # Start SNIP-ing
     pruningClass = SNIP()
-    pruningClass.prune(model=model, data=train_data, batches=Z000, batch_size=64, \
+    pruningClass.prune(model=model, data=train_data, batches=2000, batch_size=64, \
                device=device, percent=args['PERCENTAGE'])
 
     optimizer = torch.optim.Adam(model.parameters(), lr=float(args['--lr']))
@@ -1140,9 +1140,12 @@ def pruneModel(model, args: Dict[str, str]):
         dataloader = zip(train_data_src, train_data_tgt)
 
         pruningClass = SNIP()
-        pruning.prune(model=model, data=dataloader, batches=2000, batch_size=64, \
+        # I have no idea, where to get device from. I am setting to cuda
+        device = 'cuda'
+        pruningClass.prune(model=model, data=dataloader, batches=2000, batch_size=64,
                device=device, percent=args['PERCENTAGE'])
         return float(args['PERCENTAGE'])
+
 
 def pruneModelPermanently(model, args: Dict[str, str]):
     '''Load - Prune - Permanent - Save'''
