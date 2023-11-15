@@ -12,7 +12,7 @@ Usage:
     nmt.py decode [options] MODEL_PATH TEST_SOURCE_FILE TEST_TARGET_FILE OUTPUT_FILE
     nmt.py pruneFunction [options] MODEL_PATH PRUNING_TYPE PERCENTAGE
     nmt.py pruneFunctionRetraining --train-src=<file> --train-tgt=<file> --dev-src=<file> --dev-tgt=<file> --vocab=<file> [options] MODEL_PATH PRUNING_TYPE PERCENTAGE
-    nmt.py snipTraining --train-src=<file> --train-tgt=<file> --dev-src=<file> --dev-tgt=<file> --vocab=<file> [options] MODEL_PATH PERCENTAGE
+    nmt.py snipTraining --train-src=<file> --train-tgt=<file> --dev-src=<file> --dev-tgt=<file> --vocab=<file> [options]  PERCENTAGE
 
 Options:
     -h --help                               show this screen.
