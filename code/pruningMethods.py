@@ -68,6 +68,7 @@ class SNIP():
         return torch.cat(returned_scores)
     
     def thresholding(self, model, percent):
+        percent = float(percent)
         self.thresh = torch.topk(self.scores, int(self.scores.shape[0]*(percent)), largest=False, sorted=True)
         thresh = self.thresh[0][-1]
         print(thresh)
