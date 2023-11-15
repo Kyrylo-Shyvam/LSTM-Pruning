@@ -1,0 +1,51 @@
+2023-11-15 12:57:31,717 INFO    MainThread:25495 [wandb_setup.py:_flush():76] Current SDK version is 0.15.10
+2023-11-15 12:57:31,717 INFO    MainThread:25495 [wandb_setup.py:_flush():76] Configure stats pid to 25495
+2023-11-15 12:57:31,718 INFO    MainThread:25495 [wandb_setup.py:_flush():76] Loading settings from /home2/kyrylo/.config/wandb/settings
+2023-11-15 12:57:31,718 INFO    MainThread:25495 [wandb_setup.py:_flush():76] Loading settings from /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/settings
+2023-11-15 12:57:31,718 INFO    MainThread:25495 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-11-15 12:57:31,718 INFO    MainThread:25495 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'code/lstmModel.py', 'program': 'lstmModel.py'}
+2023-11-15 12:57:31,718 INFO    MainThread:25495 [wandb_setup.py:_flush():76] Applying login settings: {'api_key': '***REDACTED***'}
+2023-11-15 12:57:31,718 INFO    MainThread:25495 [wandb_setup.py:_flush():76] Applying login settings: {'api_key': '***REDACTED***'}
+2023-11-15 12:57:31,718 INFO    MainThread:25495 [wandb_init.py:_log_setup():524] Logging user logs to /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231115_125731-h9biljjd/logs/debug.log
+2023-11-15 12:57:31,718 INFO    MainThread:25495 [wandb_init.py:_log_setup():525] Logging internal logs to /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231115_125731-h9biljjd/logs/debug-internal.log
+2023-11-15 12:57:31,718 INFO    MainThread:25495 [wandb_init.py:init():564] calling init triggers
+2023-11-15 12:57:31,718 INFO    MainThread:25495 [wandb_init.py:init():572] wandb.init called with sweep_config: {}
+config: {}
+2023-11-15 12:57:31,718 INFO    MainThread:25495 [wandb_init.py:init():614] starting backend
+2023-11-15 12:57:31,718 INFO    MainThread:25495 [wandb_init.py:init():618] setting up manager
+2023-11-15 12:57:31,720 INFO    MainThread:25495 [backend.py:_multiprocessing_setup():107] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-11-15 12:57:31,723 INFO    MainThread:25495 [wandb_init.py:init():624] backend started and connected
+2023-11-15 12:57:31,729 INFO    MainThread:25495 [wandb_init.py:init():715] updated telemetry
+2023-11-15 12:57:31,747 INFO    MainThread:25495 [wandb_init.py:init():748] communicating run to backend with 90.0 second timeout
+2023-11-15 12:57:32,829 INFO    MainThread:25495 [wandb_run.py:_on_init():2220] communicating current version
+2023-11-15 12:57:33,112 INFO    MainThread:25495 [wandb_run.py:_on_init():2229] got version response upgrade_message: "wandb version 0.16.0 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2023-11-15 12:57:33,112 INFO    MainThread:25495 [wandb_init.py:init():799] starting run threads in backend
+2023-11-15 12:57:33,233 INFO    MainThread:25495 [wandb_run.py:_console_start():2199] atexit reg
+2023-11-15 12:57:33,233 INFO    MainThread:25495 [wandb_run.py:_redirect():2054] redirect: wrap_raw
+2023-11-15 12:57:33,235 INFO    MainThread:25495 [wandb_run.py:_redirect():2119] Wrapping output streams.
+2023-11-15 12:57:33,235 INFO    MainThread:25495 [wandb_run.py:_redirect():2144] Redirects installed.
+2023-11-15 12:57:33,236 INFO    MainThread:25495 [wandb_init.py:init():840] run started, returning control to user process
+2023-11-15 12:57:33,236 INFO    MainThread:25495 [wandb_config.py:__setitem__():151] config set lr = 0.001 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x14fddf547fd0>>
+2023-11-15 12:57:33,236 INFO    MainThread:25495 [wandb_run.py:_config_callback():1324] config_cb lr 0.001 None
+2023-11-15 12:57:33,237 INFO    MainThread:25495 [wandb_config.py:__setitem__():151] config set batch_size = 64 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x14fddf547fd0>>
+2023-11-15 12:57:33,237 INFO    MainThread:25495 [wandb_run.py:_config_callback():1324] config_cb batch_size 64 None
+2023-11-15 12:57:33,237 INFO    MainThread:25495 [wandb_config.py:__setitem__():151] config set embed_size = 256 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x14fddf547fd0>>
+2023-11-15 12:57:33,237 INFO    MainThread:25495 [wandb_run.py:_config_callback():1324] config_cb embed_size 256 None
+2023-11-15 12:57:33,237 INFO    MainThread:25495 [wandb_config.py:__setitem__():151] config set hidden_size = 256 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x14fddf547fd0>>
+2023-11-15 12:57:33,237 INFO    MainThread:25495 [wandb_run.py:_config_callback():1324] config_cb hidden_size 256 None
+2023-11-15 12:57:33,237 INFO    MainThread:25495 [wandb_config.py:__setitem__():151] config set dropout = 0.2 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x14fddf547fd0>>
+2023-11-15 12:57:33,238 INFO    MainThread:25495 [wandb_run.py:_config_callback():1324] config_cb dropout 0.2 None
+2023-11-15 12:57:33,238 INFO    MainThread:25495 [wandb_config.py:__setitem__():151] config set input_feed = True - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x14fddf547fd0>>
+2023-11-15 12:57:33,239 INFO    MainThread:25495 [wandb_run.py:_config_callback():1324] config_cb input_feed True None
+2023-11-15 12:57:33,239 INFO    MainThread:25495 [wandb_config.py:__setitem__():151] config set label_smoothing = 0.1 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x14fddf547fd0>>
+2023-11-15 12:57:33,239 INFO    MainThread:25495 [wandb_run.py:_config_callback():1324] config_cb label_smoothing 0.1 None
+2023-11-15 12:57:33,239 INFO    MainThread:25495 [wandb_config.py:__setitem__():151] config set log_every = 10 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x14fddf547fd0>>
+2023-11-15 12:57:33,239 INFO    MainThread:25495 [wandb_run.py:_config_callback():1324] config_cb log_every 10 None
+2023-11-15 12:57:33,239 INFO    MainThread:25495 [wandb_config.py:__setitem__():151] config set lr_decay = 0.5 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x14fddf547fd0>>
+2023-11-15 12:57:33,239 INFO    MainThread:25495 [wandb_run.py:_config_callback():1324] config_cb lr_decay 0.5 None
+2023-11-15 12:57:33,240 INFO    MainThread:25495 [wandb_config.py:__setitem__():151] config set uniform_init = 0.0 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x14fddf547fd0>>
+2023-11-15 12:57:33,240 INFO    MainThread:25495 [wandb_run.py:_config_callback():1324] config_cb uniform_init 0.0 None
+2023-11-15 12:57:33,240 INFO    MainThread:25495 [wandb_config.py:__setitem__():151] config set max_epoch = 10 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x14fddf547fd0>>
+2023-11-15 12:57:33,240 INFO    MainThread:25495 [wandb_run.py:_config_callback():1324] config_cb max_epoch 10 None
+2023-11-15 12:58:01,921 WARNING MsgRouterThr:25495 [router.py:message_loop():77] message_loop has been closed

@@ -1,0 +1,247 @@
+{
+    "os": "Linux-4.15.0-213-generic-x86_64-with-Ubuntu-18.04-bionic",
+    "python": "3.6.9",
+    "heartbeatAt": "2023-11-15T07:30:34.924606",
+    "startedAt": "2023-11-15T07:30:32.507396",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "<python with no main file>",
+    "codePathLocal": null,
+    "git": {
+        "remote": "https://github.com/Kyrylo-Shyvam/LSTM-Pruning.git",
+        "commit": "d0bf9b16b68733852a8a9a5bf0bb3d80b42ab8ea"
+    },
+    "email": "kirilkumar@tutanota.com",
+    "root": "/home2/kyrylo/Play/SMAI-Project/LSTM-Pruning",
+    "host": "gnode086",
+    "username": "kyrylo",
+    "executable": "/home2/kyrylo/cpu1/bin/python3",
+    "cpu_count": 20,
+    "cpu_count_logical": 40,
+    "cpu_freq": {
+        "current": 1939.7737249999998,
+        "min": 1200.0,
+        "max": 3400.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2287.298,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 1715.06,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2402.659,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 1202.747,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 1203.025,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 1202.637,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3134.327,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3083.498,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3111.246,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 1200.343,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 1304.288,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2399.892,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3041.146,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3016.464,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 1247.322,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 1603.843,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 1201.872,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2068.254,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 1200.829,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2399.75,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 1794.987,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 1772.762,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 1929.227,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 1200.865,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 1200.529,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 1200.464,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2798.789,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2882.892,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2758.309,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 1200.946,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 1300.279,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2399.917,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2977.353,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 3072.86,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 1202.727,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 1600.563,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 1201.039,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 1989.679,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 1200.488,
+            "min": 1200.0,
+            "max": 3400.0
+        },
+        {
+            "current": 2399.918,
+            "min": 1200.0,
+            "max": 3400.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 219.00129318237305,
+            "used": 94.71183395385742
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 2080 Ti",
+            "memory_total": 11811160064
+        }
+    ],
+    "memory": {
+        "total": 125.78221893310547
+    }
+}

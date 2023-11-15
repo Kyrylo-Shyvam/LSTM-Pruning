@@ -21,7 +21,19 @@ import torch.nn.utils.prune as prune
 
 from utils import read_corpus, batch_iter, LabelSmoothingLoss
 from vocab import Vocab, VocabEntry
-from lstmModel import get_layers
+
+def get_layers(model):
+    arr =[]
+    for i,j in model.named_parameters():
+        a = i.split('.')
+        arr.append(tuple(a))
+        
+    layers = []
+    for name, weight in arr:
+        for i,j in model.named_children():
+            if i == name:
+                layers.append([j,weight])
+    return layers
 
 class SNIP():
     def __init__(self):
@@ -56,7 +68,7 @@ class SNIP():
         return torch.cat(returned_scores)
     
     def thresholding(self, model, percent):
-        self.thresh = torch.topk(self.scores, int(self.scores.shape[0]*(1-percent)), largest=False, sorted=True)
+        self.thresh = torch.topk(self.scores, int(self.scores.shape[0]*(percent)), largest=False, sorted=True)
         thresh = self.thresh[0][-1]
         print(thresh)
         

@@ -1,0 +1,64 @@
+2023-11-15 12:44:01,696 INFO    StreamThr :24217 [internal.py:wandb_internal():89] W&B internal server running at pid: 24217, started at: 2023-11-15 12:44:01.686527
+2023-11-15 12:44:01,698 DEBUG   HandlerThread:24217 [handler.py:handle_request():144] handle_request: status
+2023-11-15 12:44:01,709 INFO    WriterThread:24217 [datastore.py:open_for_write():85] open: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231115_124401-d0viq577/run-d0viq577.wandb
+2023-11-15 12:44:01,711 DEBUG   SenderThread:24217 [sender.py:send():379] send: header
+2023-11-15 12:44:01,726 DEBUG   SenderThread:24217 [sender.py:send():379] send: run
+2023-11-15 12:44:02,516 INFO    SenderThread:24217 [dir_watcher.py:__init__():211] watching files in: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231115_124401-d0viq577/files
+2023-11-15 12:44:02,517 INFO    SenderThread:24217 [sender.py:_start_run_threads():1124] run started: d0viq577 with start time 1700032441.703362
+2023-11-15 12:44:02,527 DEBUG   HandlerThread:24217 [handler.py:handle_request():144] handle_request: check_version
+2023-11-15 12:44:02,528 DEBUG   SenderThread:24217 [sender.py:send_request():406] send_request: check_version
+2023-11-15 12:44:02,751 DEBUG   HandlerThread:24217 [handler.py:handle_request():144] handle_request: run_start
+2023-11-15 12:44:03,702 DEBUG   HandlerThread:24217 [system_info.py:__init__():32] System info init
+2023-11-15 12:44:03,703 DEBUG   HandlerThread:24217 [system_info.py:__init__():47] System info init done
+2023-11-15 12:44:03,703 INFO    HandlerThread:24217 [system_monitor.py:start():181] Starting system monitor
+2023-11-15 12:44:03,703 INFO    SystemMonitor:24217 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-11-15 12:44:03,703 INFO    HandlerThread:24217 [system_monitor.py:probe():201] Collecting system info
+2023-11-15 12:44:03,706 INFO    SystemMonitor:24217 [interfaces.py:start():190] Started cpu monitoring
+2023-11-15 12:44:03,708 INFO    SystemMonitor:24217 [interfaces.py:start():190] Started disk monitoring
+2023-11-15 12:44:03,710 INFO    SystemMonitor:24217 [interfaces.py:start():190] Started gpu monitoring
+2023-11-15 12:44:03,711 INFO    SystemMonitor:24217 [interfaces.py:start():190] Started memory monitoring
+2023-11-15 12:44:03,711 INFO    SystemMonitor:24217 [interfaces.py:start():190] Started network monitoring
+2023-11-15 12:44:03,746 DEBUG   HandlerThread:24217 [system_info.py:probe():196] Probing system
+2023-11-15 12:44:03,747 DEBUG   HandlerThread:24217 [system_info.py:_probe_git():181] Probing git
+2023-11-15 12:44:03,763 DEBUG   HandlerThread:24217 [system_info.py:_probe_git():189] Probing git done
+2023-11-15 12:44:03,763 DEBUG   HandlerThread:24217 [system_info.py:probe():244] Probing system done
+2023-11-15 12:44:03,763 DEBUG   HandlerThread:24217 [system_monitor.py:probe():210] {'os': 'Linux-4.15.0-213-generic-x86_64-with-Ubuntu-18.04-bionic', 'python': '3.6.9', 'heartbeatAt': '2023-11-15T07:14:03.746342', 'startedAt': '2023-11-15T07:14:01.625724', 'docker': None, 'cuda': None, 'args': ('snipTraining', '--cuda', '--vocab', 'data/vocab.json', '--train-src', 'data/train.de-en.de.wmixerprep', '--train-tgt', 'data/train.de-en.en.wmixerprep', '--dev-src', 'data/valid.de-en.de', '--dev-tgt', 'data/valid.de-en.en', '--input-feed', '--valid-niter', '2400', '--batch-size', '64', '--hidden-size', '256', '--embed-size', '256', '--uniform-init', '0.0', '--label-smoothing', '0.1', '--dropout', '0.2', '--clip-grad', '5.0', '--save-to', 'work_dir/model.bin', '--lr-decay', '0.5', '--max-epoch', '10', '--lr', '0.001', 'work_dir/dummy', '0.1'), 'state': 'running', 'program': 'lstmModel.py', 'codePathLocal': 'lstmModel.py', 'codePath': 'code/lstmModel.py', 'git': {'remote': 'https://github.com/Kyrylo-Shyvam/LSTM-Pruning.git', 'commit': 'd0bf9b16b68733852a8a9a5bf0bb3d80b42ab8ea'}, 'email': 'kirilkumar@tutanota.com', 'root': '/home2/kyrylo/Play/SMAI-Project/LSTM-Pruning', 'host': 'gnode086', 'username': 'kyrylo', 'executable': '/home2/kyrylo/cpu1/bin/python', 'cpu_count': 20, 'cpu_count_logical': 40, 'cpu_freq': {'current': 1931.9141499999998, 'min': 1200.0, 'max': 3400.0}, 'cpu_freq_per_core': [{'current': 2400.001, 'min': 1200.0, 'max': 3400.0}, {'current': 2402.901, 'min': 1200.0, 'max': 3400.0}, {'current': 1294.96, 'min': 1200.0, 'max': 3400.0}, {'current': 1831.217, 'min': 1200.0, 'max': 3400.0}, {'current': 1204.322, 'min': 1200.0, 'max': 3400.0}, {'current': 1202.473, 'min': 1200.0, 'max': 3400.0}, {'current': 1200.78, 'min': 1200.0, 'max': 3400.0}, {'current': 2884.461, 'min': 1200.0, 'max': 3400.0}, {'current': 2925.706, 'min': 1200.0, 'max': 3400.0}, {'current': 1199.974, 'min': 1200.0, 'max': 3400.0}, {'current': 1604.141, 'min': 1200.0, 'max': 3400.0}, {'current': 1402.694, 'min': 1200.0, 'max': 3400.0}, {'current': 3165.948, 'min': 1200.0, 'max': 3400.0}, {'current': 3088.631, 'min': 1200.0, 'max': 3400.0}, {'current': 1403.161, 'min': 1200.0, 'max': 3400.0}, {'current': 2004.27, 'min': 1200.0, 'max': 3400.0}, {'current': 1202.64, 'min': 1200.0, 'max': 3400.0}, {'current': 2323.318, 'min': 1200.0, 'max': 3400.0}, {'current': 1202.92, 'min': 1200.0, 'max': 3400.0}, {'current': 2179.696, 'min': 1200.0, 'max': 3400.0}, {'current': 2399.919, 'min': 1200.0, 'max': 3400.0}, {'current': 2399.919, 'min': 1200.0, 'max': 3400.0}, {'current': 1288.646, 'min': 1200.0, 'max': 3400.0}, {'current': 1795.582, 'min': 1200.0, 'max': 3400.0}, {'current': 1200.673, 'min': 1200.0, 'max': 3400.0}, {'current': 1293.721, 'min': 1200.0, 'max': 3400.0}, {'current': 1201.312, 'min': 1200.0, 'max': 3400.0}, {'current': 2603.1, 'min': 1200.0, 'max': 3400.0}, {'current': 2638.491, 'min': 1200.0, 'max': 3400.0}, {'current': 1200.477, 'min': 1200.0, 'max': 3400.0}, {'current': 1601.063, 'min': 1200.0, 'max': 3400.0}, {'current': 1401.587, 'min': 1200.0, 'max': 3400.0}, {'current': 3243.361, 'min': 1200.0, 'max': 3400.0}, {'current': 3266.94, 'min': 1200.0, 'max': 3400.0}, {'current': 1400.98, 'min': 1200.0, 'max': 3400.0}, {'current': 2001.44, 'min': 1200.0, 'max': 3400.0}, {'current': 1200.871, 'min': 1200.0, 'max': 3400.0}, {'current': 1468.197, 'min': 1200.0, 'max': 3400.0}, {'current': 1201.71, 'min': 1200.0, 'max': 3400.0}, {'current': 3091.786, 'min': 1200.0, 'max': 3400.0}], 'disk': {'/': {'total': 219.00129318237305, 'used': 94.70391082763672}}, 'gpu': 'NVIDIA GeForce RTX 2080 Ti', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 2080 Ti', 'memory_total': 11811160064}], 'memory': {'total': 125.78221893310547}}
+2023-11-15 12:44:03,763 INFO    HandlerThread:24217 [system_monitor.py:probe():211] Finished collecting system info
+2023-11-15 12:44:03,763 INFO    HandlerThread:24217 [system_monitor.py:probe():214] Publishing system info
+2023-11-15 12:44:03,763 DEBUG   HandlerThread:24217 [system_info.py:_save_pip():53] Saving list of pip packages installed into the current environment
+2023-11-15 12:44:03,765 DEBUG   HandlerThread:24217 [system_info.py:_save_pip():68] Saving pip packages done
+2023-11-15 12:44:03,766 INFO    HandlerThread:24217 [system_monitor.py:probe():216] Finished publishing system info
+2023-11-15 12:44:03,784 DEBUG   SenderThread:24217 [sender.py:send():379] send: files
+2023-11-15 12:44:03,785 INFO    SenderThread:24217 [sender.py:_save_file():1375] saving file wandb-metadata.json with policy now
+2023-11-15 12:44:03,796 DEBUG   HandlerThread:24217 [handler.py:handle_request():144] handle_request: stop_status
+2023-11-15 12:44:03,797 DEBUG   SenderThread:24217 [sender.py:send_request():406] send_request: stop_status
+2023-11-15 12:44:03,801 DEBUG   HandlerThread:24217 [handler.py:handle_request():144] handle_request: internal_messages
+2023-11-15 12:44:04,140 DEBUG   SenderThread:24217 [sender.py:send():379] send: telemetry
+2023-11-15 12:44:04,140 DEBUG   SenderThread:24217 [sender.py:send():379] send: telemetry
+2023-11-15 12:44:04,140 DEBUG   SenderThread:24217 [sender.py:send():379] send: config
+2023-11-15 12:44:04,141 DEBUG   SenderThread:24217 [sender.py:send():379] send: config
+2023-11-15 12:44:04,141 DEBUG   SenderThread:24217 [sender.py:send():379] send: config
+2023-11-15 12:44:04,141 DEBUG   SenderThread:24217 [sender.py:send():379] send: config
+2023-11-15 12:44:04,141 DEBUG   SenderThread:24217 [sender.py:send():379] send: config
+2023-11-15 12:44:04,141 DEBUG   SenderThread:24217 [sender.py:send():379] send: config
+2023-11-15 12:44:04,141 DEBUG   SenderThread:24217 [sender.py:send():379] send: config
+2023-11-15 12:44:04,141 DEBUG   SenderThread:24217 [sender.py:send():379] send: config
+2023-11-15 12:44:04,142 DEBUG   SenderThread:24217 [sender.py:send():379] send: config
+2023-11-15 12:44:04,142 DEBUG   SenderThread:24217 [sender.py:send():379] send: config
+2023-11-15 12:44:04,142 DEBUG   SenderThread:24217 [sender.py:send():379] send: config
+2023-11-15 12:44:04,521 INFO    Thread-12 :24217 [dir_watcher.py:_on_file_created():271] file/dir created: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231115_124401-d0viq577/files/wandb-metadata.json
+2023-11-15 12:44:04,521 INFO    Thread-12 :24217 [dir_watcher.py:_on_file_created():271] file/dir created: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231115_124401-d0viq577/files/requirements.txt
+2023-11-15 12:44:04,928 INFO    wandb-upload_0:24217 [upload_job.py:push():131] Uploaded file /tmp/tmpjj5o2oruwandb/rlufvl6a-wandb-metadata.json
+2023-11-15 12:44:06,692 INFO    Thread-12 :24217 [dir_watcher.py:_on_file_created():271] file/dir created: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231115_124401-d0viq577/files/output.log
+2023-11-15 12:44:06,710 DEBUG   HandlerThread:24217 [handler.py:handle_request():144] handle_request: status_report
+2023-11-15 12:44:07,888 INFO    Thread-12 :24217 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home2/kyrylo/Play/SMAI-Project/LSTM-Pruning/code/wandb/run-20231115_124401-d0viq577/files/output.log
+2023-11-15 12:44:11,713 DEBUG   HandlerThread:24217 [handler.py:handle_request():144] handle_request: status_report
+2023-11-15 12:44:16,714 DEBUG   HandlerThread:24217 [handler.py:handle_request():144] handle_request: status_report
+2023-11-15 12:44:18,860 DEBUG   HandlerThread:24217 [handler.py:handle_request():144] handle_request: stop_status
+2023-11-15 12:44:18,861 DEBUG   HandlerThread:24217 [handler.py:handle_request():144] handle_request: internal_messages
+2023-11-15 12:44:18,861 DEBUG   SenderThread:24217 [sender.py:send_request():406] send_request: stop_status
+2023-11-15 12:44:22,473 DEBUG   HandlerThread:24217 [handler.py:handle_request():144] handle_request: status_report
+2023-11-15 12:44:27,575 DEBUG   HandlerThread:24217 [handler.py:handle_request():144] handle_request: status_report
+2023-11-15 12:44:32,695 DEBUG   HandlerThread:24217 [handler.py:handle_request():144] handle_request: status_report
+2023-11-15 12:44:33,840 DEBUG   HandlerThread:24217 [handler.py:handle_request():144] handle_request: stop_status
+2023-11-15 12:44:33,841 DEBUG   SenderThread:24217 [sender.py:send_request():406] send_request: stop_status

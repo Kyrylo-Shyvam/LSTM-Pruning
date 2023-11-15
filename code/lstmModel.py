@@ -68,7 +68,7 @@ import torch.nn.utils.prune as prune
 from utils import read_corpus, batch_iter, LabelSmoothingLoss
 from vocab import Vocab, VocabEntry
 
-from pruningMethods import SNIP
+from pruningMethods import *
 
 Hypothesis = namedtuple('Hypothesis', ['value', 'score'])
 
@@ -404,7 +404,8 @@ class NMT(nn.Module):
         try:
             model.load_state_dict(params['state_dict'])
         except:
-            pruneModel(model, args)
+            class_blind_pruning(model, 0)
+            # pruneModel(model, args)
             model.load_state_dict(params['state_dict'])
 
         return model
@@ -876,7 +877,7 @@ def snipTrain(args: Dict):
 
     # Start SNIP-ing
     pruningClass = SNIP()
-    pruningClass.prune(model=model, data=train_data, batches=1000, batch_size=128, \
+    pruningClass.prune(model=model, data=train_data, batches=2000, batch_size=64, \
                device=device, percent=args['PERCENTAGE'])
 
     optimizer = torch.optim.Adam(model.parameters(), lr=float(args['--lr']))
@@ -1049,18 +1050,6 @@ def decode(args: Dict[str, str]):
             f.write(hyp_sent +'\n')
     return bleu_score
 
-def get_layers(model):
-    arr =[]
-    for i,j in model.named_parameters():
-        a = i.split('.')
-        arr.append(tuple(a))
-        
-    layers = []
-    for name, weight in arr:
-        for i,j in model.named_children():
-            if i == name:
-                layers.append([j,weight])
-    return layers
 
 def random_pruning(model,percentage):
     layers = get_layers(model)
@@ -1138,7 +1127,7 @@ def pruneModel(model, args: Dict[str, str]):
         dataloader = zip(train_data_src, train_data_tgt)
 
         pruningClass = SNIP()
-        pruning.prune(model=model, data=dataloader, batches=1000, batch_size=128, \
+        pruning.prune(model=model, data=dataloader, batches=2000, batch_size=64, \
                device=device, percent=args['PERCENTAGE'])
         return float(args['PERCENTAGE'])
 
