@@ -865,11 +865,11 @@ def snipTrain(args: Dict):
         for p in model.parameters():
             p.data.uniform_(-uniform_init, uniform_init)
     elif np.abs(uniform_init) < 0.:
-        print('He initializes parameters' file=sys.stderr)
+        print('He initializes parameters', file=sys.stderr)
         for p in model.parameters():
             p.data.kaiming_uniform_()
     else:
-        print('No initialized parameters.' file=sys.stderr)
+        print('No initialized parameters.', file=sys.stderr)
 
 
 
