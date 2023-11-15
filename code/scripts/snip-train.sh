@@ -34,6 +34,6 @@ python lstmModel.py \
     --save-to ${work_dir}/model.bin \
     --lr-decay 0.5 \
     --max-epoch "$3" \
-    --lr 0.001 \
-    ${work_dir}/"$1" \
+    --lr "$1" \
     "$2" \
+
