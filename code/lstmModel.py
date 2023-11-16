@@ -860,14 +860,15 @@ def snipTrain(args: Dict):
 
     #doing uniform initialisation we need to try other initialisatin too
     uniform_init = float(args['--uniform-init'])
-    if np.abs(uniform_init) > 0.:
+    if uniform_init < 0.:
+        print('He initializes parameters', file=sys.stderr)
+        for p in model.parameters():
+          if p.dim() > 1: 
+            nn.init.kaiming_uniform_(p, mode='fan_in', nonlinearity='relu')
+    elif np.abs(uniform_init) > 0.:
         print('uniformly initialize parameters [-%f, +%f]' % (uniform_init, uniform_init), file=sys.stderr)
         for p in model.parameters():
             p.data.uniform_(-uniform_init, uniform_init)
-    elif np.abs(uniform_init) < 0.:
-        print('He initializes parameters', file=sys.stderr)
-        for p in model.parameters():
-            p.data.kaiming_uniform_()
     else:
         print('No initialized parameters.', file=sys.stderr)
 
