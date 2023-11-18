@@ -79,7 +79,7 @@ class SNIP():
             vector[score <= thresh] = 0
         
     def prune(self, model, data, batches, batch_size, percent, device):
-        print(type(batches))
+        batches=int(batches)
         self.get_mask(model)
         self.set_grad(model)
         
