@@ -1257,6 +1257,8 @@ def main():
         pruneFunctionRetraining(args)
     elif args['snipTraining']:
         snipTrain(args)
+    elif args['snipPruneWithoutTrain']:
+        snipPruneWithoutTrain(args)
     else:
         raise RuntimeError(f'invalid run mode')
     print('lastr')
