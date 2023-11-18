@@ -12,7 +12,7 @@ Usage:
     nmt.py decode [options] MODEL_PATH TEST_SOURCE_FILE TEST_TARGET_FILE OUTPUT_FILE
     nmt.py pruneFunction [options] MODEL_PATH PRUNING_TYPE PERCENTAGE
     nmt.py pruneFunctionRetraining --train-src=<file> --train-tgt=<file> --dev-src=<file> --dev-tgt=<file> --vocab=<file> [options] MODEL_PATH PRUNING_TYPE PERCENTAGE
-    nmt.py snipTraining --train-src=<file> --train-tgt=<file> --dev-src=<file> --dev-tgt=<file> --vocab=<file> [options]  PERCENTAGE
+    nmt.py snipTraining --train-src=<file> --train-tgt=<file> --dev-src=<file> --dev-tgt=<file> --vocab=<file> [options]  PERCENTAGE PRETRAIN_BATCH_SIZE
 
 Options:
     -h --help                               show this screen.
@@ -886,7 +886,7 @@ def snipTrain(args: Dict):
 
     # Start SNIP-ing
     pruningClass = SNIP()
-    pruningClass.prune(model=model, data=train_data, batches=2000, batch_size=64, \
+    pruningClass.prune(model=model, data=train_data, batches=args['PRETRAIN_BATCH_SIZE'], batch_size=64, \
                device=device, percent=args['PERCENTAGE'])
 
     optimizer = torch.optim.Adam(model.parameters(), lr=float(args['--lr']))

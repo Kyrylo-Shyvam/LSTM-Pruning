@@ -36,4 +36,5 @@ python lstmModel.py \
     --max-epoch "$3" \
     --lr "$1" \
     "$2" \
+    "$4" \
 
