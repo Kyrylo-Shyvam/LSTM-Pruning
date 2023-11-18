@@ -13,7 +13,7 @@ Usage:
     nmt.py pruneFunction [options] MODEL_PATH PRUNING_TYPE PERCENTAGE
     nmt.py pruneFunctionRetraining --train-src=<file> --train-tgt=<file> --dev-src=<file> --dev-tgt=<file> --vocab=<file> [options] MODEL_PATH PRUNING_TYPE PERCENTAGE
     nmt.py snipTraining --train-src=<file> --train-tgt=<file> --dev-src=<file> --dev-tgt=<file> --vocab=<file> [options]  PERCENTAGE PRETRAIN_BATCH_SIZE
-    nmt.py snipPruning --train-src=<file> --train-tgt=<file> --dev-src=<file> --dev-tgt=<file> --vocab=<file> [options]  PERCENTAGE=<float> PRETRAIN_BATCH_SIZE
+    nmt.py snipPruning --train-src=<file> --train-tgt=<file> --dev-src=<file> --dev-tgt=<file> --vocab=<file> [options]  PERCENTAGE PRETRAIN_BATCH_SIZE
 
 Options:
     -h --help                               show this screen.
@@ -1071,7 +1071,7 @@ def snipPruneWithoutTrain(args: Dict):
     # Start SNIP-ing
     pruningClass = SNIP()
     pruningClass.prune(model=model, data=train_data, batches=args['PRETRAIN_BATCH_SIZE'], batch_size=64, \
-               device=device, percent=args['PERCENTAGE'])
+               device=device, percent=float(args['PERCENTAGE']))
     layers = get_layers(model)
     for i, j in layers:
         prune.remove(i,j[:-5])
