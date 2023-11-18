@@ -13,7 +13,7 @@ Usage:
     nmt.py pruneFunction [options] MODEL_PATH PRUNING_TYPE PERCENTAGE
     nmt.py pruneFunctionRetraining --train-src=<file> --train-tgt=<file> --dev-src=<file> --dev-tgt=<file> --vocab=<file> [options] MODEL_PATH PRUNING_TYPE PERCENTAGE
     nmt.py snipTraining --train-src=<file> --train-tgt=<file> --dev-src=<file> --dev-tgt=<file> --vocab=<file> [options]  PERCENTAGE PRETRAIN_BATCH_SIZE
-    nmt.py snipPruning --train-src=<file> --train-tgt=<file> --dev-src=<file> --dev-tgt=<file> --vocab=<file> [options]  PERCENTAGE PRETRAIN_BATCH_SIZE
+    nmt.py snipPruning --train-src=<file> --train-tgt=<file> --dev-src=<file> --dev-tgt=<file> --vocab=<file> [options]  PERCENTAGE=<float> PRETRAIN_BATCH_SIZE
 
 Options:
     -h --help                               show this screen.
