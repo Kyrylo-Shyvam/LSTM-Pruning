@@ -13,6 +13,7 @@ Usage:
     nmt.py pruneFunction [options] MODEL_PATH PRUNING_TYPE PERCENTAGE
     nmt.py pruneFunctionRetraining --train-src=<file> --train-tgt=<file> --dev-src=<file> --dev-tgt=<file> --vocab=<file> [options] MODEL_PATH PRUNING_TYPE PERCENTAGE
     nmt.py snipTraining --train-src=<file> --train-tgt=<file> --dev-src=<file> --dev-tgt=<file> --vocab=<file> [options]  PERCENTAGE PRETRAIN_BATCH_SIZE
+    nmt.py snipPruning --train-src=<file> --train-tgt=<file> --dev-src=<file> --dev-tgt=<file> --vocab=<file> [options]  PERCENTAGE PRETRAIN_BATCH_SIZE
 
 Options:
     -h --help                               show this screen.
@@ -1010,6 +1011,71 @@ def snipTrain(args: Dict):
                 if epoch == int(args['--max-epoch']):
                     print('reached maximum number of epochs!', file=sys.stderr)
                     sys.exit(0)
+
+
+def snipPruneWithoutTrain(args: Dict):
+    #appending <s> and </s> to all sentences
+    train_data_src = read_corpus(args['--train-src'], source='src')
+    train_data_tgt = read_corpus(args['--train-tgt'], source='tgt')
+
+    dev_data_src = read_corpus(args['--dev-src'], source='src')
+    dev_data_tgt = read_corpus(args['--dev-tgt'], source='tgt')
+    #preparing train data and dev data
+    train_data = list(zip(train_data_src, train_data_tgt))
+    dev_data = list(zip(dev_data_src, dev_data_tgt))
+    
+    train_batch_size = int(args['--batch-size'])
+    clip_grad = float(args['--clip-grad'])
+    valid_niter = int(args['--valid-niter'])
+    log_every = int(args['--log-every'])
+    model_save_path = args['--save-to']
+
+    vocab = Vocab.load(args['--vocab'])
+
+    #defining the model
+    model = NMT(embed_size=int(args['--embed-size']),
+                hidden_size=int(args['--hidden-size']),
+                dropout_rate=float(args['--dropout']),
+                input_feed=args['--input-feed'],
+                label_smoothing=float(args['--label-smoothing']),
+                vocab=vocab)
+    #switch to training mode
+    model.train()
+
+    #doing uniform initialisation we need to try other initialisatin too
+    uniform_init = float(args['--uniform-init'])
+    if uniform_init < 0.:
+        print('He initializes parameters', file=sys.stderr)
+        for p in model.parameters():
+          if p.dim() > 1: 
+            nn.init.kaiming_uniform_(p, mode='fan_in', nonlinearity='relu')
+    elif np.abs(uniform_init) > 0.:
+        print('uniformly initialize parameters [-%f, +%f]' % (uniform_init, uniform_init), file=sys.stderr)
+        for p in model.parameters():
+            p.data.uniform_(-uniform_init, uniform_init)
+    else:
+        print('No initialized parameters.', file=sys.stderr)
+
+
+
+    vocab_mask = torch.ones(len(vocab.tgt))
+    vocab_mask[vocab.tgt['<pad>']] = 0
+
+    device = torch.device("cuda:0" if args['--cuda'] else "cpu")
+    print('use device: %s' % device, file=sys.stderr)
+
+    model = model.to(device)
+
+    print('begin Snipping')
+
+    # Start SNIP-ing
+    pruningClass = SNIP()
+    pruningClass.prune(model=model, data=train_data, batches=args['PRETRAIN_BATCH_SIZE'], batch_size=64, \
+               device=device, percent=args['PERCENTAGE'])
+    layers = get_layers(model)
+    for i, j in layers:
+        prune.remove(i,j[:-5])
+    model.save(model_save_path)
 
 
 # In[ ]:
