@@ -1204,7 +1204,7 @@ def pruneModel(model, args: Dict[str, str]):
 
         train_data_src = read_corpus(train_src, source='src')
         train_data_tgt = read_corpus(train_tgt, source='tgt')
-        dataloader = zip(train_data_src, train_data_tgt)
+        dataloader = list(zip(train_data_src, train_data_tgt))
 
         pruningClass = SNIP()
         # I have no idea, where to get device from. I am setting to cuda

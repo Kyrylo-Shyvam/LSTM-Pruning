@@ -82,7 +82,7 @@ class SNIP():
         batches=int(batches)
         self.get_mask(model)
         self.set_grad(model)
-        
+        percent=float(percent)
         for idx, (data, target) in enumerate(batch_iter(data, batch_size=batch_size, shuffle=True)):
 #             data, target = data.to(device), target.to(device)
             
