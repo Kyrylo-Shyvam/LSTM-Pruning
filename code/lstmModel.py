@@ -884,7 +884,7 @@ def snipTrain(args: Dict):
     model = model.to(device)
 
     print('begin Snipping')
-
+    print(args['PRETRAIN_BATCH_SIZE'])
     # Start SNIP-ing
     pruningClass = SNIP()
     pruningClass.prune(model=model, data=train_data, batches=args['PRETRAIN_BATCH_SIZE'], batch_size=64, \
