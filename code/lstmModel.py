@@ -1181,6 +1181,7 @@ def class_distribution_pruning(model,lamb):
 
 
 def pruneModel(model, args: Dict[str, str]):
+    args['PERCENTAGE']=float(args['PERCENTAGE'])
     '''Prune, given a model'''
     if args['PRUNING_TYPE'] == 'random_layerwise':
         random_layerwise_pruning(model, float(args['PERCENTAGE']))
