@@ -1213,6 +1213,21 @@ def pruneModel(model, args: Dict[str, str]):
         pruningClass.prune(model=model, data=dataloader, batches=1000, batch_size=128,
                device=device, percent=args['PERCENTAGE'])
         return float(args['PERCENTAGE'])
+    elif args['PRUNING_TYPE'] == 'obd':
+        train_src="data/train.de-en.de.wmixerprep"
+        train_tgt="data/train.de-en.en.wmixerprep"
+
+        train_data_src = read_corpus(train_src, source='src')
+        train_data_tgt = read_corpus(train_tgt, source='tgt')
+        dataloader = list(zip(train_data_src, train_data_tgt))
+
+        pruningClass = OBD()
+        # I have no idea, where to get device from. I am setting to cuda
+        device = 'cuda'
+        model.to(device)
+        pruningClass.prune(model=model, data=dataloader, batches=1000, batch_size=128,
+               device=device, percent=args['PERCENTAGE'])
+        return float(args['PERCENTAGE'])
 
 
 def pruneModelPermanently(model, args: Dict[str, str]):
