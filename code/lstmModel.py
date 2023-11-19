@@ -1209,7 +1209,8 @@ def pruneModel(model, args: Dict[str, str]):
         pruningClass = SNIP()
         # I have no idea, where to get device from. I am setting to cuda
         device = 'cuda'
-        pruningClass.prune(model=model, data=dataloader, batches=2000, batch_size=64,
+        model.to(device)
+        pruningClass.prune(model=model, data=dataloader, batches=1000, batch_size=128,
                device=device, percent=args['PERCENTAGE'])
         return float(args['PERCENTAGE'])
 
