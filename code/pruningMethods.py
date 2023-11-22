@@ -64,7 +64,7 @@ class SNIP():
 
         for name, vector in model.named_parameters():
             vector.grad.zero_()
-        
+
         return torch.cat(returned_scores)
     
     def thresholding(self, model, percent):
@@ -125,7 +125,7 @@ class OBD():
       thresh = self.thresh[0][-1]
       print(thresh)
       with torch.no_grad():
-        for score, (name, vector) in zip(self.final_scores, model.named_parameters()):
+        for score, (name, vector) in zip(self.final_scores, model.named_buffers()):
             if name == 'label_smoothing_loss.one_hot':
                 continue
             # print(vector,type(score))
