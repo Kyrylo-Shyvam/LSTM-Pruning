@@ -79,6 +79,7 @@ class SNIP():
             vector[score <= thresh] = 0
         
     def prune(self, model, data, batches, batch_size, percent, device):
+        print('This is SNIP.')
         batches=int(batches)
         self.get_mask(model)
         self.set_grad(model)
@@ -132,6 +133,7 @@ class OBD():
             vector[score <= thresh] = 0
 
   def prune(self, model, data, batches, batch_size, percent, device):
+      print('This is OBD')
       batches=int(batches)
       # batches = 1
       self.get_mask(model)
