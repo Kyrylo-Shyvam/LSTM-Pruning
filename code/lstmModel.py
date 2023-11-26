@@ -861,18 +861,33 @@ def snipTrain(args: Dict):
 
     #doing uniform initialisation we need to try other initialisatin too
     uniform_init = float(args['--uniform-init'])
-    if uniform_init < 0.:
-        print('He initializes parameters', file=sys.stderr)
-        for p in model.parameters():
-          if p.dim() > 1: 
-            nn.init.kaiming_uniform_(p, mode='fan_in', nonlinearity='relu')
-    elif np.abs(uniform_init) > 0.:
-        print('uniformly initialize parameters [-%f, +%f]' % (uniform_init, uniform_init), file=sys.stderr)
-        for p in model.parameters():
-            p.data.uniform_(-uniform_init, uniform_init)
-    else:
-        print('No initialized parameters.', file=sys.stderr)
 
+    if uniform_init == 0.:
+      print('He initializes parameters', file=sys.stderr)
+      for p in model.parameters():
+            if p.dim() > 1:
+                nn.init.kaiming_uniform_(p, mode='fan_in', nonlinearity='relu')
+    elif uniform_init == 1.:
+      print('uniformly initialize parameters [-%f, +%f]' % (uniform_init, uniform_init), file=sys.stderr)
+      for p in model.parameters():
+            p.data.uniform_(-uniform_init, uniform_init)
+    elif uniform_init == 2.:
+      print('Xavier normal initializes parameters', file=sys.stderr)
+      for p in model.parameters():
+            if p.dim() > 1:
+                nn.init.xavier_normal_(p)
+    elif uniform_init == 3.:
+      print('Xavier uniform initializes parameters', file=sys.stderr)
+      for p in model.parameters():
+            if p.dim() > 1:
+                nn.init.xavier_uniform_(p)
+    elif uniform_init == 4.:
+      print('Kaiming normal initializes parameters', file=sys.stderr)
+      for p in model.parameters():
+            if p.dim() > 1:
+                nn.init.kaiming_normal_(p)
+    else:
+      print('No initialized parameters.', file=sys.stderr)
 
 
     vocab_mask = torch.ones(len(vocab.tgt))
