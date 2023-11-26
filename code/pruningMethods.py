@@ -136,7 +136,7 @@ class OBD():
       print('This is OBD')
       batches=int(batches)
       # batches = 1
-      self.get_mask(model)
+      # self.get_mask(model)
       percent=float(percent)
       for idx, (data, target) in enumerate(batch_iter(data, batch_size=batch_size, shuffle=True)):
 
