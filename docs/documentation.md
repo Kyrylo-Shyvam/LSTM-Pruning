@@ -1,10 +1,15 @@
+# Documentation
+- [Documentation](#documentation)
+  - [Folder Structure](#folder-structure)
+  - [Pruning Methods Implemented](#pruning-methods-implemented)
+  - [Working Of Different Scripts](#working-of-different-scripts)
+  - [Experiments Performed](#experiments-performed)
+
 ## Folder Structure
 
 The project has the following folder structure:
 
-- `animation/`: Contains everything related to the animation.
-  - `code/`: Contains the code for the animation.
-  - `videos/`: Contains the videos for the animation.
+- `animation/`: Contains videos of animations.
 - `docs/`: Contains docs for the project.
 - `code/`: Contains the whole source code for the project.
   - `data/`: Contains the data for the project.
