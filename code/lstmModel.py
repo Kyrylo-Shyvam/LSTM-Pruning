@@ -870,22 +870,22 @@ def snipTrain(args: Dict):
     elif uniform_init == 1.:
       print('uniformly initialize parameters [-%f, +%f]' % (uniform_init, uniform_init), file=sys.stderr)
       for p in model.parameters():
-            p.data.uniform_(-uniform_init, uniform_init)
+            p.data.uniform_(-0.1, 0.1)
     elif uniform_init == 2.:
       print('Xavier normal initializes parameters', file=sys.stderr)
       for p in model.parameters():
             if p.dim() > 1:
-                nn.init.xavier_normal_(p)
+                nn.init.xavier_normal_(p, gain=nn.init.calculate_gain('relu'))
     elif uniform_init == 3.:
       print('Xavier uniform initializes parameters', file=sys.stderr)
       for p in model.parameters():
             if p.dim() > 1:
-                nn.init.xavier_uniform_(p)
+                nn.init.xavier_uniform_(p, gain=nn.init.calculate_gain('relu'))
     elif uniform_init == 4.:
       print('Kaiming normal initializes parameters', file=sys.stderr)
       for p in model.parameters():
             if p.dim() > 1:
-                nn.init.kaiming_normal_(p)
+                nn.init.kaiming_normal_(p, mode='fan_in', nonlinearity='relu')
     else:
       print('No initialized parameters.', file=sys.stderr)
 
