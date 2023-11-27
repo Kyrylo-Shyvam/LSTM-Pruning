@@ -1,5 +1,3 @@
-# Team - Optimal Brain Damage
-
 ## Folder Structure
 
 The project has the following folder structure:
@@ -49,4 +47,29 @@ The project has the following folder structure:
   - model is saved to work_dir/model.bin.final
 
 ## Experiments Performed
-  
+- Pruning after training without retraining and finding bleu score for differnt percentage of pruning
+  - Magnitude Pruning
+    - class-blind magnitude pruning
+    - class-uniform magnitude pruning
+    - class-distribution magnitude pruning
+  - Random Pruning
+  - OBD Pruning 
+- Pruning with retraining and finding bleu score for differnt percentage of pruning
+  - Magnitude Pruning
+    - class-blind magnitude pruning
+  - Random Pruning
+  - OBD Pruning  
+- Pruning with SNIP and finding bleu score for different percentage of training
+- Pruning on extreme percetages
+  - OBD
+  - class-blind magnitude pruning
+  - random
+- Images of weights in class blind maginitude pruning
+- Change in perplexity by pruning different weights classes at 90 percent pruning for class blind ,class uniform and class distrubution magnitude pruning
+- Relation between perplexity change and magniture of maxinum wieght deleted for class blind magnitude pruning
+- Pruning then again initialsing the weights and then training the model(Sparse-From-Begin)
+- Percentage pruned per layer 
+  - OBD
+  - class-blind magnitude pruning
+  - SNIP
+- Effect Of how much data we show before pruning in snip
