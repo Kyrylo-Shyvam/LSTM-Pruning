@@ -1,3 +1,24 @@
+## Documentation for different files
+
+- [Documentation for different files](#documentation-for-different-files)
+- [Vocab.py](#vocabpy)
+  - [Overview](#overview)
+  - [Methods](#methods)
+  - [Building a Vocabulary](#building-a-vocabulary)
+  - [Saving and Loading a Vocabulary](#saving-and-loading-a-vocabulary)
+- [Utils.py](#utilspy)
+  - [`read_corpus`](#read_corpus)
+  - [`batch_iter`](#batch_iter)
+  - [`LabelSmoothingLoss`](#labelsmoothingloss)
+- [pruningMethods.py](#pruningmethodspy)
+  - [`get_layers`](#get_layers)
+  - [`SNIP`](#snip)
+  - [`OBD`](#obd)
+- [lstmModel.py](#lstmmodelpy)
+- [Pruning Functions](#pruning-functions)
+  - [Random Pruning](#random-pruning)
+  - [Magnitude Pruning](#magnitude-pruning)
+
 ## Vocab.py
 
 ### Overview
@@ -128,4 +149,29 @@ A list of tuples, where each tuple contains a layer and its corresponding weight
 
 - `thresh`: The threshold value used for pruning.
 - `scores`: The Hessian scores for each weight.
+
+## lstmModel.py
+
+## Pruning Functions
+
+The provided code implements various pruning algorithms for neural network models. These algorithms can be used to reduce the size and complexity of neural networks, potentially improving their efficiency and performance.
+
+### Random Pruning
+
+- `random_pruning(model, percentage)`: Performs random pruning on a given model, removing a specified percentage of weights randomly.
+
+- `random_layerwise_pruning(model, percentage)`: Applies random pruning to a given model on a layer-wise basis, removing a specified percentage of weights from each layer.
+
+### Magnitude Pruning
+
+- `class_blind_pruning(model, percentage)`: Performs pruning based on the L1-norm of weights, removing connections with less impact on the model's performance.
+
+- `class_uniform_sub(module, percentage)`: Applies pruning based on the L1-norm within a module, retaining the top `percentage` weights and discarding the rest.
+
+- `class_uniform_pruning(model, percentage)`: Applies pruning based on the L1-norm to each child module of the model.
+
+- `class_distribution_sub(module, lamb)`: Applies pruning based on the L1-norm and a threshold parameter, retaining weights with absolute values greater than `lamb*std`.
+
+- `class_distribution_pruning(model, lamb)`: Applies pruning based on the L1-norm and a threshold parameter to each child module of the model.
+
 
