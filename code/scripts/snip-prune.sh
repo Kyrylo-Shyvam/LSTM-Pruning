@@ -31,7 +31,7 @@ python lstmModel.py \
     --label-smoothing 0.1 \
     --dropout 0.2 \
     --clip-grad 5.0 \
-    --save-to ${work_dir}/model.bin \
+    --save-to ${work_dir}/model.bin.pruned \
     --lr-decay 0.5 \
     --max-epoch "$3" \
     --lr "$1" \
