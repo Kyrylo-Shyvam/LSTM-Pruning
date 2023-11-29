@@ -106,7 +106,8 @@ class Vocab(object):
         num = len(tgt_vocab)
         array = np.random.default_rng().permutation(np.arange(4, num))
         for i,j in zip(tgt_vocab, array):
-            tgt_vocab[i] = j
+            tgt_vocab.word2id[i] = j
+            # tgt_vocab[i] = j
 
     @staticmethod
     def build(src_sents, tgt_sents, vocab_size, freq_cutoff) -> 'Vocab':
