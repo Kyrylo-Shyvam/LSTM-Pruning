@@ -86,7 +86,7 @@ class NMT(nn.Module):
         self.dropout_rate = dropout_rate
         self.vocab = vocab 
         self.input_feed = input_feed 
-        self.alpha_t=None
+        self.alpha_t=[]
         #input feed = true is used when we want to inconporate attentional effects we want to have information not only about the last hidden layer but all hidden layers
         '''Mentioned in paper: The model will be aware of previous alignment choices.'''
         # initialize neural network layers
