@@ -469,7 +469,8 @@ def compute_corpus_level_bleu_score(references: List[List[str]], hypotheses: Lis
 
 def train(args: Dict):
     wandb.login(key="14dded5f079435f64fb5e2f0278662dda5605f9e")
-    wandb.init(project="train-wandb")
+    wandb.init(project="random-labels")
+    wandb.config.type = 'regular'
     wandb.config.lr = args['--lr']
     wandb.config.batch_size = args['--batch-size']
     wandb.config.embed_size = args['--embed-size']
@@ -818,7 +819,8 @@ def retrain(args: Dict,model):
 
 def snipTrain(args: Dict):
     wandb.login(key="14dded5f079435f64fb5e2f0278662dda5605f9e")
-    wandb.init(project="snip-train")
+    wandb.init(project="random-labels")
+    wandb.config.type = 'snip'
     wandb.config.lr = args['--lr']
     wandb.config.batch_size = args['--batch-size']
     wandb.config.embed_size = args['--embed-size']

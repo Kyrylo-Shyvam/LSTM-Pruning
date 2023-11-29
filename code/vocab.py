@@ -14,6 +14,8 @@ Options:
 from typing import List
 from collections import Counter
 from itertools import chain
+
+import numpy as np
 from docopt import docopt
 import json
 import torch
@@ -98,6 +100,13 @@ class Vocab(object):
     def __init__(self, src_vocab: VocabEntry, tgt_vocab: VocabEntry):
         self.src = src_vocab
         self.tgt = tgt_vocab
+
+        # Random permutation in place
+        print('Did random permutation.')
+        num = len(tgt_vocab)
+        array = np.random.default_rng().permutation(np.arange(4, num))
+        for i,j in zip(tgt_vocab, array):
+            tgt_vocab[i] = j
 
     @staticmethod
     def build(src_sents, tgt_sents, vocab_size, freq_cutoff) -> 'Vocab':
