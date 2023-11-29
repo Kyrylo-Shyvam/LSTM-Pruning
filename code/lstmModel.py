@@ -1118,7 +1118,7 @@ def beam_search(model: NMT, test_data_src: List[List[str]], beam_size: int, max_
 # In[ ]:
 
 
-def decode(args: Dict[str, str]):
+def decode(model1,args: Dict[str, str]):
     print(f"load test source sentences from [{args['TEST_SOURCE_FILE']}]", file=sys.stderr)
     test_data_src = read_corpus(args['TEST_SOURCE_FILE'], source='src')
     if args['TEST_TARGET_FILE']:
@@ -1126,7 +1126,7 @@ def decode(args: Dict[str, str]):
         test_data_tgt = read_corpus(args['TEST_TARGET_FILE'], source='tgt')
 
     print(f"load model from {args['MODEL_PATH']}", file=sys.stderr)
-    model = NMT.load(args['MODEL_PATH'])
+    model = model1
 
     if args['--cuda']:
         model = model.to(torch.device("cuda:0"))
