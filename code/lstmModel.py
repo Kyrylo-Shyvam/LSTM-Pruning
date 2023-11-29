@@ -344,7 +344,7 @@ class NMT(nn.Module):
 
             (h_t, cell_t), att_t, alpha_t = self.step(x, h_tm1,
                                                       exp_src_encodings, exp_src_encodings_att_linear, src_sent_masks=None)
-            self.alpha_t.append(att_t)
+            self.alpha_t.append(alpha_t)
             # log probabilities over target words
             log_p_t = F.log_softmax(self.pred(att_t), dim=-1)
 
