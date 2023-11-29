@@ -351,6 +351,7 @@ class NMT(nn.Module):
             live_hyp_num = beam_size - len(completed_hypotheses)
             contiuating_hyp_scores = (hyp_scores.unsqueeze(1).expand_as(log_p_t) + log_p_t).view(-1)
             top_cand_hyp_scores, top_cand_hyp_pos = torch.topk(contiuating_hyp_scores, k=live_hyp_num)
+            print(top_cand_hyp_pos)
 
             prev_hyp_ids = torch.div(top_cand_hyp_pos , len(self.vocab.tgt),rounding_mode='floor')
             hyp_word_ids = top_cand_hyp_pos % len(self.vocab.tgt)
