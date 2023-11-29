@@ -308,7 +308,7 @@ class NMT(nn.Module):
         """
 
         src_sents_var = self.vocab.src.to_input_tensor([src_sent], self.device)
-
+        print([src_sent])
         src_encodings, dec_init_vec = self.encode(src_sents_var, [len(src_sent)])
         src_encodings_att_linear = self.att_src_linear(src_encodings)
 
@@ -347,7 +347,6 @@ class NMT(nn.Module):
             self.alpha_t.append(alpha_t)
             # log probabilities over target words
             log_p_t = F.log_softmax(self.pred(att_t), dim=-1)
-            print(log_p_t)
             live_hyp_num = beam_size - len(completed_hypotheses)
             contiuating_hyp_scores = (hyp_scores.unsqueeze(1).expand_as(log_p_t) + log_p_t).view(-1)
             top_cand_hyp_scores, top_cand_hyp_pos = torch.topk(contiuating_hyp_scores, k=live_hyp_num)
