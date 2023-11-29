@@ -90,36 +90,32 @@ class VocabEntry(object):
         print(f'number of word types: {len(word_freq)}, number of word types w/ frequency >= {freq_cutoff}: {len(valid_words)}')
 
         top_k_words = sorted(valid_words, key=lambda w: word_freq[w], reverse=True)[:size]
+
         for word in top_k_words:
             vocab_entry.add(word)
 
-        return vocab_entry
+        return vocab_entry, top_k_words
 
 
 class Vocab(object):
-    def __init__(self, src_vocab: VocabEntry, tgt_vocab: VocabEntry):
+    def __init__(self, src_vocab: VocabEntry, tgt_vocab: VocabEntry, tgt_top=None,src_top=None):
         self.src = src_vocab
         self.tgt = tgt_vocab
 
-        # Random permutation in place
-        print('Did random permutation.')
-        num = len(tgt_vocab)
-        array = np.random.default_rng().permutation(np.arange(4, num))
-        for i,j in zip(tgt_vocab, array):
-            tgt_vocab.word2id[i] = j
-            # tgt_vocab[i] = j
+        self.tgt_top = tgt_top
+        self.src_top = src_top
 
     @staticmethod
     def build(src_sents, tgt_sents, vocab_size, freq_cutoff) -> 'Vocab':
         assert len(src_sents) == len(tgt_sents)
 
         print('initialize source vocabulary ..')
-        src = VocabEntry.from_corpus(src_sents, vocab_size, freq_cutoff)
+        src,src_top = VocabEntry.from_corpus(src_sents, vocab_size, freq_cutoff)
 
         print('initialize target vocabulary ..')
-        tgt = VocabEntry.from_corpus(tgt_sents, vocab_size, freq_cutoff)
-
-        return Vocab(src, tgt)
+        tgt,tgt_top = VocabEntry.from_corpus(tgt_sents, vocab_size, freq_cutoff)
+        temp = Vocab(src, tgt, tgt_top=tgt_top, src_top=src_top)
+        return temp
 
     def save(self, file_path):
         json.dump(dict(src_word2id=self.src.word2id, tgt_word2id=self.tgt.word2id), open(file_path, 'w'), indent=2)
