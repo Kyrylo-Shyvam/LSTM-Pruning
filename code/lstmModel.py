@@ -79,12 +79,14 @@ Hypothesis = namedtuple('Hypothesis', ['value', 'score'])
 
 class NMT(nn.Module):
     def __init__(self, embed_size, hidden_size, vocab, dropout_rate=0.2, input_feed=True, label_smoothing=0.):
+        print("hi")
         super(NMT, self).__init__()
         self.embed_size = embed_size 
         self.hidden_size = hidden_size
         self.dropout_rate = dropout_rate
         self.vocab = vocab 
         self.input_feed = input_feed 
+        self.alpha_t=None
         #input feed = true is used when we want to inconporate attentional effects we want to have information not only about the last hidden layer but all hidden layers
         '''Mentioned in paper: The model will be aware of previous alignment choices.'''
         # initialize neural network layers
@@ -205,7 +207,7 @@ class NMT(nn.Module):
                 x = y_tm1_embed
 
             (h_t, cell_t), att_t, alpha_t = self.step(x, h_tm1, src_encodings, src_encoding_att_linear, src_sent_masks)
-
+            self.alpha_t = alpha_t
             att_tm1 = att_t
             h_tm1 = h_t, cell_t
             att_ves.append(att_t)
@@ -230,7 +232,6 @@ class NMT(nn.Module):
         #getting attentional hidden state
         att_t = torch.tanh(self.att_vec_linear(torch.cat([h_t, ctx_t], 1)))  # E.q. (5)
         att_t = self.dropout(att_t)
-
         return (h_t, cell_t), att_t, alpha_t
     
     #function for getting the score using dot product attention
@@ -402,6 +403,7 @@ class NMT(nn.Module):
         params = torch.load(model_path, map_location=lambda storage, loc: storage)
         args = params['args']
         model = NMT(vocab=params['vocab'], **args)
+        model.alpha_t=params['alpha_t']
         try:
             model.load_state_dict(params['state_dict'])
         except:
@@ -418,6 +420,7 @@ class NMT(nn.Module):
             'args': dict(embed_size=self.embed_size, hidden_size=self.hidden_size, dropout_rate=self.dropout_rate,
                          input_feed=self.input_feed, label_smoothing=self.label_smoothing),
             'vocab': self.vocab,
+            'alpha_t':self.alpha_t,
             'state_dict': self.state_dict()
         }
 
