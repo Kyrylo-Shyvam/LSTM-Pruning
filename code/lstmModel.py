@@ -344,7 +344,7 @@ class NMT(nn.Module):
 
             (h_t, cell_t), att_t, alpha_t = self.step(x, h_tm1,
                                                       exp_src_encodings, exp_src_encodings_att_linear, src_sent_masks=None)
-            self.alpha_t=alpha_t
+            self.alpha_t.append(att_t)
             # log probabilities over target words
             log_p_t = F.log_softmax(self.pred(att_t), dim=-1)
 
@@ -1119,6 +1119,7 @@ def beam_search(model: NMT, test_data_src: List[List[str]], beam_size: int, max_
 
 
 def decode(model1,args: Dict[str, str]):
+    print(f"hi",file=sys.stderr)
     print(f"load test source sentences from [{args['TEST_SOURCE_FILE']}]", file=sys.stderr)
     test_data_src = read_corpus(args['TEST_SOURCE_FILE'], source='src')
     if args['TEST_TARGET_FILE']:
@@ -1127,6 +1128,7 @@ def decode(model1,args: Dict[str, str]):
 
     print(f"load model from {args['MODEL_PATH']}", file=sys.stderr)
     model = model1
+    print(model,file=sys.stderr)
 
     if args['--cuda']:
         model = model.to(torch.device("cuda:0"))
