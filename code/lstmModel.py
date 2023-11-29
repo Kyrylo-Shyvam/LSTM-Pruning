@@ -403,7 +403,7 @@ class NMT(nn.Module):
         params = torch.load(model_path, map_location=lambda storage, loc: storage)
         args = params['args']
         model = NMT(vocab=params['vocab'], **args)
-        model.alpha_t=params['alpha_t']
+        # model.alpha_t=params['alpha_t']
         try:
             model.load_state_dict(params['state_dict'])
         except:
