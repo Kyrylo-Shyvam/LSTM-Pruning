@@ -1,0 +1,10 @@
+,summary,config,name
+54,"{'bleu': 0.2827584910389831, '_step': 0, '_wandb': {'runtime': 173}, '_runtime': 174.09052681922913, '_timestamp': 1698945347.872377}","{'percentage': 0.1, 'pruningType': 'class-blind'}",crimson-energy-9
+52,"{'bleu': 0.28224545985576316, '_step': 0, '_wandb': {'runtime': 170}, '_runtime': 171.09937715530396, '_timestamp': 1698945704.4077785}","{'percentage': 0.2, 'pruningType': 'class-blind'}",scarlet-wood-11
+50,"{'_runtime': 170.23922967910767, '_timestamp': 1698946062.5360117, 'bleu': 0.2787533814696365, '_step': 0, '_wandb': {'runtime': 169}}","{'percentage': 0.3, 'pruningType': 'class-blind'}",upbeat-frost-13
+48,"{'_timestamp': 1698946423.9341006, 'bleu': 0.26903420646950277, '_step': 0, '_wandb': {'runtime': 172}, '_runtime': 173.05834364891052}","{'percentage': 0.4, 'pruningType': 'class-blind'}",swift-eon-15
+46,"{'bleu': 0.24538306633093815, '_step': 0, '_wandb': {'runtime': 174}, '_runtime': 175.5459475517273, '_timestamp': 1698946790.5959785}","{'percentage': 0.5, 'pruningType': 'class-blind'}",apricot-cloud-17
+44,"{'bleu': 0.20242019234340833, '_step': 0, '_wandb': {'runtime': 179}, '_runtime': 180.2640573978424, '_timestamp': 1698947165.3283904}","{'percentage': 0.6, 'pruningType': 'class-blind'}",golden-blaze-19
+42,"{'bleu': 0.11124294979842256, '_step': 0, '_wandb': {'runtime': 209}, '_runtime': 209.75663828849792, '_timestamp': 1698947573.6700814}","{'percentage': 0.7, 'pruningType': 'class-blind'}",lemon-yogurt-21
+40,"{'bleu': 0.02003113017107615, '_step': 0, '_wandb': {'runtime': 300}, '_runtime': 301.49388217926025, '_timestamp': 1698948107.0609922}","{'percentage': 0.8, 'pruningType': 'class-blind'}",young-firebrand-23
+38,"{'bleu': 8.938970201746278e-05, '_step': 0, '_wandb': {'runtime': 657}, '_runtime': 657.9167256355286, '_timestamp': 1698949312.4777796}","{'percentage': 0.9, 'pruningType': 'class-blind'}",noble-morning-25

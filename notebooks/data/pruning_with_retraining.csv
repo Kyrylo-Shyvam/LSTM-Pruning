@@ -1,0 +1,6 @@
+,summary,config,name
+4,"{'bleu': 0.26884659712965847, '_step': 0, '_wandb': {'runtime': 2178}, '_runtime': 2177.6087741851807, '_timestamp': 1698964488.0357792}","{'percentage': '0.5', 'pruningType': 'class-blind'}",crimson-pond-6
+3,"{'bleu': 0.2645997158054744, '_step': 0, '_wandb': {'runtime': 171}, '_runtime': 172.2505123615265, '_timestamp': 1698996118.1185343}","{'percentage': 0.6, 'pruningType': 'class-blind'}",soft-wood-13
+2,"{'_runtime': 169.05050659179688, '_timestamp': 1698998235.2570736, 'bleu': 0.258811923853191, '_step': 0, '_wandb': {'runtime': 168}}","{'percentage': 0.7, 'pruningType': 'class-blind'}",polar-pine-14
+1,"{'_wandb': {'runtime': 171}, '_runtime': 171.88046717643738, '_timestamp': 1699000352.1760192, 'bleu': 0.23948559577783904, '_step': 0}","{'percentage': 0.8, 'pruningType': 'class-blind'}",fresh-field-15
+0,"{'bleu': 0.12115672354510368, '_step': 0, '_wandb': {'runtime': 185}, '_runtime': 185.61246800422668, '_timestamp': 1699002489.1324291}","{'percentage': 0.9, 'pruningType': 'class-blind'}",bright-river-16
