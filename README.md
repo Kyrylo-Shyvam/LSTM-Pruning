@@ -1,4 +1,4 @@
-# Documentation
+# Pruning of LSTMs for Neural Machine Translation
 
 ## Why do we do Pruning?
 
@@ -8,7 +8,7 @@
 
 ## What does Pruning Do?
 
-During pruning, connections associated with less important or redundant features are removed, leading to a sparser neural network. This can remove the connections based on various saliency criterion or some other [methods.](http://methods.So) So pruning kind of works like feature selection i.e. selecting features most important for the task.
+During pruning, connections associated with less important or redundant features are removed, leading to a sparser neural network. This can remove the connections based on various saliency criterion or some other methods. So pruning kind of works like feature selection i.e. selecting features most important for the task.
 
 ## How does retraining help?
 
@@ -33,9 +33,7 @@ An encoder computes representations for each source sentence.Decoder generates o
 
 What we calculate in ******NMT****** is:
 
-$$
-p(y \mid x) = p(y_1 \mid s) \cdot p(y_2 \mid y_1, s) \cdot \ldots \cdot p(y_T \mid y_{T-1}, y_{T-2}, \ldots, y_1, s)
-$$
+$$p(y \mid x) = p(y_1 \mid s) \cdot p(y_2 \mid y_1, s) \cdot \ldots \cdot p(y_T \mid y_{T-1}, y_{T-2}, \ldots, y_1, s)$$
 
 ********************************************Beam Search Decoding:******************************************** On each decoding step we keep track of k most probable translations (which we call hypothesis).
 
@@ -60,8 +58,7 @@ $$
 After taking log and simplifying we get:
 
 $$
-\text{Perplexity} = e^{-\sum_{i=1}^{N} \log_e(P(w_i)) / N}
-
+\text{Perplexity} = e^{-\Sigma_{i=1}^{N} \log_e(P(w_i)) / N}
 $$
 
 1. **Bleu Score**
@@ -167,7 +164,6 @@ $$
 \text{dL} = &  \sum_{i} \frac{\partial L}{\partial w_i } w_i +  \frac{1}{2} \sum_i \left( \frac{\partial^2 L}{\partial w_i^2} \right) \left( \frac{\partial L}{\partial w_i} \right)^2+\frac{1}{2} \sum_{i,j} \frac{\partial^2 L}{\partial w_i \partial w_j} w_i w_j + O(n^3)
 \end{split}
 \end{equation}
-
 $$
 
 Now since the model has converged, the first term is zero and we ignore the interaction and higher order terms what we finally get is:
@@ -178,7 +174,6 @@ $$
 \text{dL} = &\sum_i \left( \frac{\partial^2 L}{\partial w_i^2} \right) \left( \frac{\partial L}{\partial w_i} \right)^2 
 \end{split}
 \end{equation}
-
 $$
 
 Second derivative of the loss functions with respect to parameters is used a saliency measure. 
