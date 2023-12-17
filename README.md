@@ -87,13 +87,14 @@ During pruning we prune weights that are redundant for our network. Weights with
 
 - **Class Blind:**
     - Sort the parameters of whole model. Find the threshold for pruning such that x% of weights is pruned.
-    
-    [ExampleScene.mp4](Documentation%20630d93bc52214cb5aedfc667b5e5554e/ExampleScene.mp4)
+      
+    [![ExampleScene.mp4](https://img.youtube.com/vi/G0qQOhCKzt8/0.jpg)](https://youtu.be/G0qQOhCKzt8)
     
 - **Class Uniform:**
     - Sort the parameters of  each class and within each class find the threshold for pruning such that x% of weights in all classes of weights are pruned.
-    
-    [class-uniform.mp4](Documentation%20630d93bc52214cb5aedfc667b5e5554e/class-uniform.mp4)
+      
+[![ExampleScene.mp4](https://img.youtube.com/vi/-bwvUtaBjnE/0.jpg)](https://youtu.be/-bwvUtaBjnE)
+
     
 - **Class Distribution:**
     - For each class c, weights with magnitude less than $\lambda \sigma_c$  are pruned. Here, $\sigma_c$ is the standard deviation of that class and $\lambda$ is a universal parameter chosen such that in total, x% of all parameters are pruned.
@@ -177,6 +178,7 @@ $$
 $$
 
 Second derivative of the loss functions with respect to parameters is used a saliency measure. 
+[![ExampleScene.mp4](https://img.youtube.com/vi/wT6mGmLONeg/0.jpg)](https://youtu.be/wT6mGmLONeg)
 
 ### Why does this work?
 
